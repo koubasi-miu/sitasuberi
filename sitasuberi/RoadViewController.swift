@@ -9,6 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var imageview: UIImageView!
+    
+    @IBAction func start() {
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
