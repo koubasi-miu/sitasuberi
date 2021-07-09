@@ -17,6 +17,9 @@
 		9D813E4A2685E57000F9E786 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D813E492685E56F00F9E786 /* FirstViewController.swift */; };
 		9D813E4F2685E57B00F9E786 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D813E4E2685E57B00F9E786 /* SecondViewController.swift */; };
 		9D86E8352684B12900CDBCF6 /* RoadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D86E8342684B12900CDBCF6 /* RoadViewController.swift */; };
+		9DABDB532698670F00AA6C23 /* ItirannViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DABDB522698670F00AA6C23 /* ItirannViewController.swift */; };
+		9DABDB5B26986B7700AA6C23 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DABDB5A26986B7700AA6C23 /* ChallengeViewController.swift */; };
+		9DABDB6326986E8600AA6C23 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DABDB6226986E8600AA6C23 /* MemoryViewController.swift */; };
 		F556F65E2691E0CD00EA8897 /* SideScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F65D2691E0CD00EA8897 /* SideScrollViewController.swift */; };
 		F556F6632691F13E00EA8897 /* NewCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6622691F13E00EA8897 /* NewCollectionViewLayout.swift */; };
 		F556F66E2692B63D00EA8897 /* NewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F66D2692B63D00EA8897 /* NewCollectionViewCell.swift */; };
@@ -57,6 +60,9 @@
 		9D813E492685E56F00F9E786 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = ../FirstViewController.swift; sourceTree = "<group>"; };
 		9D813E4E2685E57B00F9E786 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9D86E8342684B12900CDBCF6 /* RoadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoadViewController.swift; path = ../RoadViewController.swift; sourceTree = "<group>"; };
+		9DABDB522698670F00AA6C23 /* ItirannViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItirannViewController.swift; sourceTree = "<group>"; };
+		9DABDB5A26986B7700AA6C23 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
+		9DABDB6226986E8600AA6C23 /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 		F556F65D2691E0CD00EA8897 /* SideScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideScrollViewController.swift; sourceTree = "<group>"; };
 		F556F6622691F13E00EA8897 /* NewCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewLayout.swift; sourceTree = "<group>"; };
 		F556F66D2692B63D00EA8897 /* NewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 				F556F65D2691E0CD00EA8897 /* SideScrollViewController.swift */,
 				F556F66D2692B63D00EA8897 /* NewCollectionViewCell.swift */,
 				F556F6D226940A3100EA8897 /* StartViewController.swift */,
+				9DABDB522698670F00AA6C23 /* ItirannViewController.swift */,
+				9DABDB5A26986B7700AA6C23 /* ChallengeViewController.swift */,
+				9DABDB6226986E8600AA6C23 /* MemoryViewController.swift */,
 			);
 			path = sitasuberi;
 			sourceTree = "<group>";
@@ -276,13 +285,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DABDB5B26986B7700AA6C23 /* ChallengeViewController.swift in Sources */,
 				F556F65E2691E0CD00EA8897 /* SideScrollViewController.swift in Sources */,
 				F556F6632691F13E00EA8897 /* NewCollectionViewLayout.swift in Sources */,
 				F556F66E2692B63D00EA8897 /* NewCollectionViewCell.swift in Sources */,
 				9D86E8352684B12900CDBCF6 /* RoadViewController.swift in Sources */,
+				9DABDB532698670F00AA6C23 /* ItirannViewController.swift in Sources */,
 				9D5A83ED266A5D7800AF0E7E /* AppDelegate.swift in Sources */,
 				F556F6D326940A3100EA8897 /* StartViewController.swift in Sources */,
 				9D5A83EF266A5D7800AF0E7E /* SceneDelegate.swift in Sources */,
+				9DABDB6326986E8600AA6C23 /* MemoryViewController.swift in Sources */,
 				9D813E4F2685E57B00F9E786 /* SecondViewController.swift in Sources */,
 				9D813E4A2685E57000F9E786 /* FirstViewController.swift in Sources */,
 			);
