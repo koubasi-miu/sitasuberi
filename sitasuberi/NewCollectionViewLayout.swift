@@ -2,6 +2,7 @@ import UIKit
  
 class NewCollectionViewLayout: UICollectionViewLayout {
     
+    
     //行数
     let columns = 8
     let rows = 16
@@ -22,7 +23,7 @@ class NewCollectionViewLayout: UICollectionViewLayout {
         let columnHeight = columnWidth
 //        var x:CGFloat = 0
         var x:CGFloat = columnHeight * CGFloat((columns - 1))
-        var y:CGFloat = 40
+        var y:CGFloat = 0
         
         for count in 0 ... collectionView!.numberOfItems(inSection: 0){
             let indexPath = NSIndexPath(item: count, section: 0)
@@ -43,7 +44,7 @@ class NewCollectionViewLayout: UICollectionViewLayout {
             if ((count + 1) % rows != 0){
                 y += columnHeight
             }else{
-                y = 40
+                y = 0
                 x -= columnWidth
             }
         }

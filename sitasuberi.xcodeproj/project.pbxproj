@@ -20,6 +20,7 @@
 		F556F65E2691E0CD00EA8897 /* SideScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F65D2691E0CD00EA8897 /* SideScrollViewController.swift */; };
 		F556F6632691F13E00EA8897 /* NewCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6622691F13E00EA8897 /* NewCollectionViewLayout.swift */; };
 		F556F66E2692B63D00EA8897 /* NewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F66D2692B63D00EA8897 /* NewCollectionViewCell.swift */; };
+		F556F6D326940A3100EA8897 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F556F6D226940A3100EA8897 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		F556F65D2691E0CD00EA8897 /* SideScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideScrollViewController.swift; sourceTree = "<group>"; };
 		F556F6622691F13E00EA8897 /* NewCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewLayout.swift; sourceTree = "<group>"; };
 		F556F66D2692B63D00EA8897 /* NewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCollectionViewCell.swift; sourceTree = "<group>"; };
+		F556F6D226940A3100EA8897 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				F556F6622691F13E00EA8897 /* NewCollectionViewLayout.swift */,
 				F556F65D2691E0CD00EA8897 /* SideScrollViewController.swift */,
 				F556F66D2692B63D00EA8897 /* NewCollectionViewCell.swift */,
+				F556F6D226940A3100EA8897 /* StartViewController.swift */,
 			);
 			path = sitasuberi;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				F556F66E2692B63D00EA8897 /* NewCollectionViewCell.swift in Sources */,
 				9D86E8352684B12900CDBCF6 /* RoadViewController.swift in Sources */,
 				9D5A83ED266A5D7800AF0E7E /* AppDelegate.swift in Sources */,
+				F556F6D326940A3100EA8897 /* StartViewController.swift in Sources */,
 				9D5A83EF266A5D7800AF0E7E /* SceneDelegate.swift in Sources */,
 				9D813E4F2685E57B00F9E786 /* SecondViewController.swift in Sources */,
 				9D813E4A2685E57000F9E786 /* FirstViewController.swift in Sources */,
@@ -386,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -441,7 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

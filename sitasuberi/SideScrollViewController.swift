@@ -12,7 +12,8 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
  
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var charArray = Array("                                   |滑舌チャレンジ|")
+    var titleArray = Array("                                   |滑舌チャレンジ|" + String(repeating: " ", count: 42) + "スタート")
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,10 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
+   
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,10 +39,10 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
 //        cell.label.text = String(indexPath[1])
         
         //indexPathは配列で、[0]にSectionナンバー、[1]にcellの番号が入っているよ
-        let length = charArray.count
+        let length = titleArray.count
         if indexPath[1] < length {
-            cell.label.text = String(charArray[indexPath[1]])
-            if String(charArray[indexPath[1]]) == "ー"{
+            cell.label.text = String(titleArray[indexPath[1]])
+            if String(titleArray[indexPath[1]]) == "ー"{
                 //Labelの回転などを行う場合にはアフィン変換を利用する
                 let angle = 90 * CGFloat.pi / 180
 //                cell.label.transform = CGAffineTransform(scaleX: -1, y: 1);
@@ -51,11 +52,11 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
                                                        tx: 0, ty: 0)
                 cell.label.transform = affine
 
-            }else if String(charArray[indexPath[1]]) == "、" || String(charArray[indexPath[1]]) == "、" {
+            }else if String(titleArray[indexPath[1]]) == "、" || String(titleArray[indexPath[1]]) == "、" {
                 cell.label.textAlignment = .right
-                cell.label.text = String(charArray[indexPath[1]]) + "\n"
+                cell.label.text = String(titleArray[indexPath[1]]) + "\n"
             }
-        }else{
+       } else {
             cell.label.text = ""
         }
         
@@ -63,7 +64,29 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
         return cell
     }
     
-    private let spacing:CGFloat = 16.0
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        
+        if indexPath.item == 86 || indexPath.item == 87 || indexPath.item == 88 || indexPath.item == 89 {
+            let startViewController = self.storyboard?.instantiateViewController(withIdentifier: "StartVC") as! StartViewController
+            self.navigationController?.pushViewController(startViewController, animated: true)
+            print("the cell item selected is: \(indexPath.item)")
+            print("the cell row selected is: \(indexPath.row)")
+        }
+        print("the cell item selected is: \(indexPath.item)")
+        print("the cell row selected is: \(indexPath.row)")
+        
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+//        if let cell = collectionView.cellForItem(at: indexPath) {
+//            cell.contentView.backgroundColor = .orange
+//        }
+//    }
+    
+   
+    
+        //private let spacing:CGFloat = 16.0
     
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //            let numberOfItemsPerRow:CGFloat = 4
@@ -79,8 +102,6 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
 //            }
 //    }
 //
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-    }
+  
 
 }
