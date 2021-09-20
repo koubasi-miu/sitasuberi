@@ -10,8 +10,15 @@ class NewCollectionViewLayout: UICollectionViewLayout {
     private var layoutData = [UICollectionViewLayoutAttributes]()
     var contentHeight: CGFloat = 0
     
+    var contentWidth: CGFloat {
+            guard let collectionView = collectionView else { return 0 }
+            return collectionView.bounds.width
+        }
+    
+    //func layoutDate;.scrollDirection = .horizontal() // 横スクロール
+
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: collectionView!.bounds.width, height: collectionView!.bounds.height)
+        return CGSize(width: contentWidth, height: collectionView!.bounds.height)
     }
     
     //レイアウトの準備
@@ -49,6 +56,8 @@ class NewCollectionViewLayout: UICollectionViewLayout {
             }
         }
     }
+    
+    
     
     //レイアウトを返す
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

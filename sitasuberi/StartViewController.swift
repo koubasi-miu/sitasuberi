@@ -59,24 +59,18 @@ class StartViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item == 20 || indexPath.item == 21 {
-            let ItirannViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirannVC") as! StartViewController
+        if indexPath.item == 19 || indexPath.item == 20 {
+            let ItirannViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirannVC") as! ItirannViewController
             self.navigationController?.pushViewController(ItirannViewController, animated: true)
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
-        }else if indexPath.item == 52 || indexPath.item == 53 || indexPath.item == 54 || indexPath.item == 55 || indexPath.item == 56 {
-            let ChallengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeVC") as! StartViewController
+        }else if indexPath.item == 51 || indexPath.item == 52 || indexPath.item == 53 || indexPath.item == 54 || indexPath.item == 55 {
+            let ChallengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeVC") as! ChallengeViewController
             self.navigationController?.pushViewController(ChallengeViewController, animated: true)
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
-    }else if indexPath.item == 52 || indexPath.item == 53 || indexPath.item == 54 || indexPath.item == 55 || indexPath.item == 56 {
-        let ChallengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeVC") as! StartViewController
-        self.navigationController?.pushViewController(ChallengeViewController, animated: true)
-        print("the cell item selected is: \(indexPath.item)")
-        print("the cell row selected is: \(indexPath.row)")
-
 }else if indexPath.item == 83 || indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86 || indexPath.item == 87 || indexPath.item == 88 || indexPath.item == 89 {
-    let MemoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "MemoryVC") as! StartViewController
+    let MemoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "MemoryVC") as! MemoryViewController
     self.navigationController?.pushViewController(MemoryViewController, animated: true)
     print("the cell item selected is: \(indexPath.item)")
     print("the cell row selected is: \(indexPath.row)")

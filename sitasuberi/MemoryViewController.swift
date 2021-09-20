@@ -11,6 +11,8 @@ class MemoryViewController: UIViewController,UICollectionViewDataSource, UIColle
 
     @IBOutlet weak var collectionView: UICollectionView!
 
+    var selectArray = Array("　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　｜ただいま準備中です｜")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,20 +34,30 @@ class MemoryViewController: UIViewController,UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! NewCollectionViewCell
+        
+        
+        let length = selectArray.count
+        if indexPath[1] < length {
+            cell.label.text = String(selectArray[indexPath[1]])
+            if String(selectArray[indexPath[1]]) == "ー"{
+                //Labelの回転などを行う場合にはアフィン変換を利用する
+                let angle = 90 * CGFloat.pi / 180
+
+                let affine = CGAffineTransform(a: cos(angle), b:sin(angle),
+                                                       c: sin(angle), d: -cos(angle),
+                                                       tx: 0, ty: 0)
+                cell.label.transform = affine
+
+            }else if String(selectArray[indexPath[1]]) == "、" || String(selectArray[indexPath[1]]) == "、" {
+                cell.label.textAlignment = .right
+                cell.label.text = String(selectArray[indexPath[1]]) + "\n"
+            }
+              }else {
+            cell.label.text = ""
+        }
+
         return cell
     }
-
     
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

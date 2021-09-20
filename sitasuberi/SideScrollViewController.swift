@@ -12,7 +12,7 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
  
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var titleArray = Array("                                   |滑舌チャレンジ|" + String(repeating: " ", count: 42) + "スタート")
+    var titleArray = Array("                                   |滑舌チャレンジ|" + String(repeating: " ", count: 42) + "▼スタート")
     
 
     override func viewDidLoad() {
@@ -25,10 +25,6 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
         collectionView.delegate = self
     }
    
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 160
@@ -36,17 +32,14 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! NewCollectionViewCell
-//        cell.label.text = String(indexPath[1])
         
-        //indexPathは配列で、[0]にSectionナンバー、[1]にcellの番号が入っているよ
         let length = titleArray.count
         if indexPath[1] < length {
             cell.label.text = String(titleArray[indexPath[1]])
             if String(titleArray[indexPath[1]]) == "ー"{
                 //Labelの回転などを行う場合にはアフィン変換を利用する
                 let angle = 90 * CGFloat.pi / 180
-//                cell.label.transform = CGAffineTransform(scaleX: -1, y: 1);
-//                cell.label.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+
                 let affine = CGAffineTransform(a: cos(angle), b:sin(angle),
                                                        c: sin(angle), d: -cos(angle),
                                                        tx: 0, ty: 0)
@@ -67,7 +60,7 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         
-        if indexPath.item == 86 || indexPath.item == 87 || indexPath.item == 88 || indexPath.item == 89 {
+        if indexPath.item == 86 || indexPath.item == 87 || indexPath.item == 88 || indexPath.item == 89 || indexPath.item == 90 {
             let startViewController = self.storyboard?.instantiateViewController(withIdentifier: "StartVC") as! StartViewController
             self.navigationController?.pushViewController(startViewController, animated: true)
             print("the cell item selected is: \(indexPath.item)")
@@ -78,30 +71,7 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
         
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) {
-//            cell.contentView.backgroundColor = .orange
-//        }
-//    }
-    
-   
-    
-        //private let spacing:CGFloat = 16.0
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//            let numberOfItemsPerRow:CGFloat = 4
-//            let spacingBetweenCells:CGFloat = 16
-//
-//            let totalSpacing = (2 * self.spacing) + ((numberOfItemsPerRow - 1) * spacingBetweenCells) //Amount of total spacing in a row
-//
-//            if let collection = self.collectionView{
-//                let width = (collection.bounds.width - totalSpacing)/numberOfItemsPerRow
-//                return CGSize(width: width, height: width)
-//            }else{
-//                return CGSize(width: 0, height: 0)
-//            }
-//    }
-//
+
   
 
 }
