@@ -20,7 +20,7 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        itiranImageArray = ["shi.png", "uirou.png"]
+//        itiranImageArray = ["shi.png", "uirou.png"]
         self.collectionView.bounds.size.width = self.view.bounds.size.width-10
         self.collectionView.bounds.size.height = self.view.bounds.size.height
         self.collectionView.center = self.view.center
@@ -66,84 +66,84 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
          if indexPath.item == 32 || indexPath.item == 33 || indexPath.item == 34{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "あぎょ.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "agyoo.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if  indexPath.item == 36 || indexPath.item == 37 || indexPath.item == 38{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "か行.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "kagyoo.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if  indexPath.item == 40 || indexPath.item == 41 || indexPath.item == 42{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "さ行.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "sagyoo.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if  indexPath.item == 45 || indexPath.item == 46 || indexPath.item == 47{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "た行.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "tagyoou.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if  indexPath.item == 64 || indexPath.item == 65 || indexPath.item == 66{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "な行.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "nagyoo.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
        }else if  indexPath.item == 68 || indexPath.item == 69 || indexPath.item == 70{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "は行.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "hagyoo.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if  indexPath.item == 72 || indexPath.item == 73 || indexPath.item == 74{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "ま行.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "magyoou.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if  indexPath.item == 76 || indexPath.item == 77 || indexPath.item == 78{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "や行.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "yagyoo.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if  indexPath.item == 96 || indexPath.item == 97 || indexPath.item == 98{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "ら行.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "ragyoou.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if  indexPath.item == 100 || indexPath.item == 101 || indexPath.item == 102{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "わ行.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "wagyouu.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if indexPath.item == 106 || indexPath.item == 105 || indexPath.item == 104 || indexPath.item == 107 {
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "うい.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "uirororo.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
         }else if indexPath.item == 109 || indexPath.item == 110 {
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
-            itirandetailViewController.itiranImage = UIImage(named: "うた.png")!
+            itirandetailViewController.itiranImage = UIImage(named: "ししし.png")!
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)

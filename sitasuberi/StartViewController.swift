@@ -12,7 +12,7 @@ class StartViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var selectArray = Array("                   一覧" + String(repeating:" ", count: 30) + "チャレンジ" + String(repeating:" ", count: 27) + "これまでの記録")
+    var selectArray = Array("　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼一覧" + String(repeating:" ", count: 1) + "▼これまでの記録" + String(repeating:" ", count: 36) + "▼チャレンジ" + String(repeating:" ", count: 2) + "▼使い方")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,19 +59,26 @@ class StartViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item == 19 || indexPath.item == 20 {
-            let ItirannViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirannVC") as! ItirannViewController
-            self.navigationController?.pushViewController(ItirannViewController, animated: true)
+        if indexPath.item == 33 || indexPath.item == 34 || indexPath.item == 35 {
+            let itirannViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirannVC") as! ItirannViewController
+            self.navigationController?.pushViewController(itirannViewController, animated: true)
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
-        }else if indexPath.item == 51 || indexPath.item == 52 || indexPath.item == 53 || indexPath.item == 54 || indexPath.item == 55 {
-            let ChallengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeVC") as! ChallengeViewController
-            self.navigationController?.pushViewController(ChallengeViewController, animated: true)
+        }else if indexPath.item == 81 || indexPath.item == 82 || indexPath.item == 83 || indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86 {
+            let challengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeVC") as! ChallengeViewController
+            self.navigationController?.pushViewController(challengeViewController, animated: true)
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
-}else if indexPath.item == 83 || indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86 || indexPath.item == 87 || indexPath.item == 88 || indexPath.item == 89 {
-    let MemoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "MemoryVC") as! MemoryViewController
-    self.navigationController?.pushViewController(MemoryViewController, animated: true)
+}else if indexPath.item == 38 || indexPath.item == 49 || indexPath.item == 50 || indexPath.item == 51 || indexPath.item == 52 || indexPath.item == 53 || indexPath.item == 54 || indexPath.item == 55 {
+    let memoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "MemoryVC") as! MemoryViewController
+    self.navigationController?.pushViewController(memoryViewController, animated: true)
+    print("the cell item selected is: \(indexPath.item)")
+    print("the cell row selected is: \(indexPath.row)")
+    
+}else if indexPath.item == 89 || indexPath.item == 90 || indexPath.item == 91 || indexPath.item == 92 {
+    let tukaikataViewController = self.storyboard?.instantiateViewController(withIdentifier: "TukaikataVC") as! TukaikataViewController
+    tukaikataViewController.tukaikataImage = UIImage(named: "tukaikata2.png")!
+    self.navigationController?.pushViewController(tukaikataViewController, animated: true)
     print("the cell item selected is: \(indexPath.item)")
     print("the cell row selected is: \(indexPath.row)")
     

@@ -25,7 +25,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EHK-1L-v4h">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.94873291250000003" green="0.94977051020000003" blue="0.90195536610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewLayout key="collectionViewLayout" id="PWZ-UJ-psA" customClass="NewCollectionViewLayout" customModule="sitasuberi" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="gW4-aG-jQ5" customClass="NewCollectionViewCell" customModule="sitasuberi" customModuleProvider="target">
@@ -329,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wu6-VS-Z4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1060.8695652173915" y="1575.6696428571429"/>
+            <point key="canvasLocation" x="1061" y="1576"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="JKE-Aq-TS7">
@@ -432,6 +432,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pA-5S-S5D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4719" y="2415"/>
+        </scene>
+        <!--Tukaikata View Controller-->
+        <scene sceneID="dzX-YK-OTY">
+            <objects>
+                <viewController storyboardIdentifier="TukaikataVC" id="P2u-Yr-JTd" customClass="TukaikataViewController" customModule="sitasuberi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3vt-jv-qVr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vce-nb-0bm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HcR-OP-6Mt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="P2u-Yr-JTd" id="pLp-Wc-Sfo"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sIl-bV-JfK"/>
+                        <color key="backgroundColor" red="0.94873291250000003" green="0.94977051020000003" blue="0.90195536610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="vce-nb-0bm" firstAttribute="trailing" secondItem="sIl-bV-JfK" secondAttribute="trailing" id="B3P-HB-llJ"/>
+                            <constraint firstItem="vce-nb-0bm" firstAttribute="top" secondItem="3vt-jv-qVr" secondAttribute="top" id="Gpj-BE-MMh"/>
+                            <constraint firstItem="vce-nb-0bm" firstAttribute="leading" secondItem="sIl-bV-JfK" secondAttribute="leading" id="MaY-7o-VGA"/>
+                            <constraint firstAttribute="bottom" secondItem="vce-nb-0bm" secondAttribute="bottom" id="qHp-Dw-tY5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="HcR-OP-6Mt" id="GHb-5L-Bvw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hkj-QM-pSz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1767" y="1576"/>
         </scene>
     </scenes>
     <resources>

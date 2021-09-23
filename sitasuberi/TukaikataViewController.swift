@@ -1,18 +1,18 @@
 //
-//  ItirandetailViewController.swift
+//  TukaikataViewController.swift
 //  sitasuberi
 //
-//  Created by 藤井美羽 on 2021/07/25.
+//  Created by 藤井美羽 on 2021/09/23.
 //
 
 import UIKit
 
-class ItirandetailViewController: UIViewController, UIScrollViewDelegate {
+class TukaikataViewController: UIViewController, UIScrollViewDelegate {
 
-    var itiranImageArray = [String]()
+    var tukaikataImageArray = [String]()
     
     @IBOutlet weak var imageView: UIImageView!
-    var itiranImage = UIImage()
+    var tukaikataImage = UIImage()
     
     var scrollView = UIScrollView()
     var scale:CGFloat = 1.0
@@ -41,15 +41,15 @@ class ItirandetailViewController: UIViewController, UIScrollViewDelegate {
             //   let UIImage = UIImage(named: "itiranImageArray")!
               
             // 画像のサイズ
-               let imgW = itiranImage.size.width
-               let imgH = itiranImage.size.height
+               let imgW = tukaikataImage.size.width
+               let imgH = tukaikataImage.size.height
                 
                 scale = screenHeight / imgH
         let rect:CGRect = CGRect(x:0, y:0, width: imgW*scale, height: imgH*scale)
         
        
                // UIImageView 初期化 インスタンス作成
-               let imageView = UIImageView(image: itiranImage)
+               let imageView = UIImageView(image: tukaikataImage)
                
         imageView.frame = rect;
      
