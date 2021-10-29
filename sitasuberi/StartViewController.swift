@@ -69,7 +69,7 @@ class StartViewController: UIViewController, UICollectionViewDataSource, UIColle
             self.navigationController?.pushViewController(challengeViewController, animated: true)
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
-}else if indexPath.item == 38 || indexPath.item == 49 || indexPath.item == 50 || indexPath.item == 51 || indexPath.item == 52 || indexPath.item == 53 || indexPath.item == 54 || indexPath.item == 55 {
+}else if indexPath.item == 37 || indexPath.item == 38 || indexPath.item == 39 || indexPath.item == 40 || indexPath.item == 41 || indexPath.item == 42 || indexPath.item == 43 || indexPath.item == 44 {
     let memoryViewController = self.storyboard?.instantiateViewController(withIdentifier: "MemoryVC") as! MemoryViewController
     self.navigationController?.pushViewController(memoryViewController, animated: true)
     print("the cell item selected is: \(indexPath.item)")

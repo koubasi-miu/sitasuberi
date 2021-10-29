@@ -20,7 +20,6 @@ class NewCollectionViewLayout: UICollectionViewLayout {
     override var collectionViewContentSize: CGSize {
         return CGSize(width: contentWidth, height: collectionView!.bounds.height)
     }
-    
     //レイアウトの準備
     override func prepare() {
         super.prepare()
@@ -31,7 +30,7 @@ class NewCollectionViewLayout: UICollectionViewLayout {
 //        var x:CGFloat = 0
         var x:CGFloat = columnHeight * CGFloat((columns - 1))
         var y:CGFloat = 0
-        
+//        scrollDirection = .horizontal
         for count in 0 ... collectionView!.numberOfItems(inSection: 0){
             let indexPath = NSIndexPath(item: count, section: 0)
             //レイアウトの配列に位置とサイズを登録する。

@@ -11,7 +11,7 @@ class SecondViewController: UIViewController,UICollectionViewDataSource, UIColle
 
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var selectArray = Array("　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　お疲れ様でした！" + String(repeating:" ", count: 30) + "選択に戻る")
+    var selectArray = Array("　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　お疲れ様でした！" + String(repeating:" ", count: 30) + "▼選択に戻る")
     
     
     override func viewDidLoad() {
@@ -63,7 +63,7 @@ class SecondViewController: UIViewController,UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         
-        if indexPath.item == 73 || indexPath.item == 74 || indexPath.item == 75 || indexPath.item == 76 || indexPath.item == 77 {
+        if indexPath.item == 73 || indexPath.item == 74 || indexPath.item == 75 || indexPath.item == 76 || indexPath.item == 77 || indexPath.item == 78 {
             let startViewController = self.storyboard?.instantiateViewController(withIdentifier: "StartVC") as! StartViewController
             self.navigationController?.pushViewController(startViewController, animated: true)
             print("the cell item selected is: \(indexPath.item)")

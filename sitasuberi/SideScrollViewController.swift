@@ -15,6 +15,10 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
     var titleArray = Array("                                   |滑舌チャレンジ|" + String(repeating: " ", count: 42) + "▼スタート")
     
 
+   // let layout = SecondCollectionViewFlowLayout()
+//    layout.scrollDirection = .horizontal // 横スクロール
+ //   collectionView.collectionViewLayout = layout
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.bounds.size.width = self.view.bounds.size.width-10

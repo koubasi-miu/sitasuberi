@@ -24,7 +24,7 @@ class SecondCollectionViewFlowLayout: UICollectionViewFlowLayout {
     //func layoutDate;.scrollDirection = .horizontal() // 横スクロール
 
     override var collectionViewContentSize: CGSize {
-        return CGSize(width: contentWidth, height: contentHeight)
+        return CGSize(width: contentWidth, height: collectionView!.bounds.height)
     }
     
     private func setup() {
@@ -36,20 +36,13 @@ class SecondCollectionViewFlowLayout: UICollectionViewFlowLayout {
         super.prepare()
         guard layoutData.isEmpty, let collectionView = collectionView else { return }
 
-       // self.layoutData.removeAll()
-        //let allWidth  = collectionView!.bounds.width
+        scrollDirection = .horizontal
         let columnWidth = contentWidth / CGFloat(self.columns)
         let columnHeight = columnWidth
  //      var xOffsets = [CGFloat](repeating: 0, count: columns)
        var x:CGFloat = 0
   //     var x:CGFloat = columnHeight * CGFloat((columns - 1))
         var y:CGFloat = 0
-     //   var yOffsets = [CGFloat]()
-
-  //      for column in 0..<columns {
-   //                 x.append(columnWidth * CGFloat(column))
-   //             }
-
         
         for count in 0 ... collectionView.numberOfItems(inSection: 0){
             let indexPath = NSIndexPath(item: count, section: 0)
@@ -87,10 +80,6 @@ class SecondCollectionViewFlowLayout: UICollectionViewFlowLayout {
             return visibleLayoutAttributes
         }
     }
-    //レイアウトを返す
-   // override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-   //     return layoutData
-  //  }
 
 
 

@@ -76,7 +76,7 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
     
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item == 107 || indexPath.item == 108 {
+        if indexPath.item == 107 || indexPath.item == 108 || indexPath.item == 109 {
             
          //   hayakutiArray.remove(at: 0)
            i = i + 1
@@ -88,10 +88,14 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
             
            if i == hayakutiArray.count - 1 {
           //  if i == i{
-            let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! SecondViewController
-                self.navigationController?.pushViewController(secondViewController, animated: true)
-            //else{
-           //    choicehayakuti()
+            let syuryoViewController = self.storyboard?.instantiateViewController(withIdentifier: "SyuryoVC") as! SyuryoViewController
+            syuryoViewController.number = Int.random(in: 0...1)
+            if syuryoViewController.number == 0 {
+                syuryoViewController.otuImage = UIImage(named: "お疲れ1.png")!
+            }else{
+                syuryoViewController.otuImage = UIImage(named: "お疲れ2.png")!
+            }
+                self.navigationController?.pushViewController(syuryoViewController, animated: true)
             }
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
