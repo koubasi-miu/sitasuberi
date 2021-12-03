@@ -65,8 +65,8 @@ class StartViewController: UIViewController, UICollectionViewDataSource, UIColle
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
         }else if indexPath.item == 81 || indexPath.item == 82 || indexPath.item == 83 || indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86 {
-            let challengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeVC") as! ChallengeViewController
-            self.navigationController?.pushViewController(challengeViewController, animated: true)
+            let decideViewController = self.storyboard?.instantiateViewController(withIdentifier: "DecideVC") as! DecideViewController
+            self.navigationController?.pushViewController(decideViewController, animated: true)
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
 }else if indexPath.item == 37 || indexPath.item == 38 || indexPath.item == 39 || indexPath.item == 40 || indexPath.item == 41 || indexPath.item == 42 || indexPath.item == 43 || indexPath.item == 44 {
