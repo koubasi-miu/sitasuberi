@@ -49,24 +49,8 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
         // Do any additional setup after loading the view.
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if indexPath.item == 19 || indexPath.item == 20 || indexPath.item == 21 || indexPath.item == 22 {
-//
-//            self.list.append(contentsOf: ["あ行","か行","さ行","た行","な行","は行","ま行","や行","ら行","わ行","外郎売"])
-//
-//        }else if indexPath.item == 52 || indexPath.item == 53 || indexPath.item == 54 || indexPath.item == 55 {
-//            self.list.append(contentsOf: ["三個","五個","八個","十個","十五個","全て"])
-//
-//        }else if indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86 || indexPath.item == 87 {
-//            self.list.append(contentsOf: ["カウントダウン","時間計測"])
-//
-//        }else if indexPath.item == 116 || indexPath.item == 117 || indexPath.item == 118 || indexPath.item == 119 {
-//            self.list.append(contentsOf: ["〇","×"])
-//
-//        }
-//    }
     
-    @objc func doneTapped(){
+     @objc func doneTapped(){
             UIView.animate(withDuration: 0.2){
                 self.pickerToolbar.frame = CGRect(x:0,y:self.view.frame.height,
                                                   width:self.view.frame.width,height:self.toolbarHeight)
@@ -111,7 +95,7 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
                    case 3:
                        return rokuonlist[row]
                    default:
-                           0   }
+                           return ""  }
         }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -146,7 +130,7 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         
         if indexPath.item == 124 || indexPath.item == 125 {
             let challengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeVC") as! ChallengeViewController
@@ -154,17 +138,13 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
         }else if indexPath.item == 20 || indexPath.item == 21 {
-            let index = gyolist.findIndex{$0 == cell.rightLabel.text}
-            if(index.count != 0){pickerView.selectRow(index[0],inComponent:0,animated:false)}
-        }else if indexPath.item == 52 || indexPath.item == 53 {
-            let index = kosulist.findIndex{$0 == cell.rightLabel.text}
-            if(index.count != 0){pickerView.selectRow(index[0],inComponent:0,animated:false)}
-        }else if indexPath.item == 84 || indexPath.item == 85 {
-            let index = jikanlist.findIndex{$0 == cell.rightLabel.text}
-            if(index.count != 0){pickerView.selectRow(index[0],inComponent:0,animated:false)}
-        }else if indexPath.item == 116 || indexPath.item == 117 {
-            let index = rokuonlist.findIndex{$0 == cell.rightLabel.text}
-            if(index.count != 0){pickerView.selectRow(index[0],inComponent:0,animated:false)}
+            pickerView.selectRow(gyolist.count,inComponent: 1,animated: false)
+//        }else if indexPath.item == 52 || indexPath.item == 53 {
+//            pickerView.selectRow(kosulist.count,inComponent: 1,animated: false)
+//        }else if indexPath.item == 84 || indexPath.item == 85 {
+//            pickerView.selectRow(jikanlist.count,inComponent: 1,animated: false)
+//        }else if indexPath.item == 116 || indexPath.item == 117 {
+//            pikerView.selectRow(rokuonlist.count,inComponent: 1,animated: false)
         }
         print("the cell item selected is: \(indexPath.item)")
         print("the cell row selected is: \(indexPath.row)")

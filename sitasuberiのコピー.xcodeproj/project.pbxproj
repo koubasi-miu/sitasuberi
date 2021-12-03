@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D441818275A2565002B084B /* tukaikata¥.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D441817275A2565002B084B /* tukaikata¥.png */; };
 		9D557873272C0E2B00C9D423 /* bidakuon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D557872272C0E2B00C9D423 /* bidakuon.png */; };
 		9D580BDD269D739500C4AD25 /* SecondCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D580BDC269D739500C4AD25 /* SecondCollectionViewLayout.swift */; };
 		9D5A83ED266A5D7800AF0E7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A83EC266A5D7800AF0E7E /* AppDelegate.swift */; };
@@ -29,7 +30,6 @@
 		9D969B4726FC2BE900E845B5 /* ragyoou.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D969B4626FC2BE900E845B5 /* ragyoou.png */; };
 		9D969B5526FC34B800E845B5 /* uirororo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D969B5426FC34B800E845B5 /* uirororo.png */; };
 		9D969B6226FC45C200E845B5 /* TukaikataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D969B6126FC45C200E845B5 /* TukaikataViewController.swift */; };
-		9D969B6F26FC6F6D00E845B5 /* tukaikata2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D969B6E26FC6F6D00E845B5 /* tukaikata2.png */; };
 		9D9C107226A193220085102E /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9C107126A193220085102E /* CustomFlowLayout.swift */; };
 		9DA4EED226F4D034001556E5 /* アプリ明朝Old.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA4EECD26F4D034001556E5 /* アプリ明朝Old.otf */; };
 		9DA4EED326F4D034001556E5 /* アプリ明朝UD.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DA4EECE26F4D034001556E5 /* アプリ明朝UD.otf */; };
@@ -71,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D441817275A2565002B084B /* tukaikata¥.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tukaikata¥.png"; sourceTree = "<group>"; };
 		9D557872272C0E2B00C9D423 /* bidakuon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bidakuon.png; sourceTree = "<group>"; };
 		9D580BDC269D739500C4AD25 /* SecondCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewLayout.swift; sourceTree = "<group>"; };
 		9D5A83E9266A5D7800AF0E7E /* sitasuberi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sitasuberi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +100,6 @@
 		9D969B4626FC2BE900E845B5 /* ragyoou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ragyoou.png; sourceTree = "<group>"; };
 		9D969B5426FC34B800E845B5 /* uirororo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uirororo.png; sourceTree = "<group>"; };
 		9D969B6126FC45C200E845B5 /* TukaikataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TukaikataViewController.swift; sourceTree = "<group>"; };
-		9D969B6E26FC6F6D00E845B5 /* tukaikata2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tukaikata2.png; sourceTree = "<group>"; };
 		9D9C107126A193220085102E /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		9DA4EECD26F4D034001556E5 /* アプリ明朝Old.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "アプリ明朝Old.otf"; sourceTree = "<group>"; };
 		9DA4EECE26F4D034001556E5 /* アプリ明朝UD.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "アプリ明朝UD.otf"; sourceTree = "<group>"; };
@@ -161,8 +161,8 @@
 				9D969B2B26FC293300E845B5 /* yagyoo.png */,
 				9D969B4626FC2BE900E845B5 /* ragyoou.png */,
 				9D969B2A26FC293300E845B5 /* wagyouu.png */,
-				9D969B6E26FC6F6D00E845B5 /* tukaikata2.png */,
 				9D969B5426FC34B800E845B5 /* uirororo.png */,
+				9D441817275A2565002B084B /* tukaikata¥.png */,
 				9D557872272C0E2B00C9D423 /* bidakuon.png */,
 				9DB4E92F26FE12D30070204D /* お疲れ1.png */,
 				9DB4E93426FE12DA0070204D /* お疲れ2.png */,
@@ -365,7 +365,6 @@
 			files = (
 				9DA4EED526F4D034001556E5 /* アプリ明朝.otf in Resources */,
 				9D969B2C26FC293300E845B5 /* agyoo.png in Resources */,
-				9D969B6F26FC6F6D00E845B5 /* tukaikata2.png in Resources */,
 				9DA4EED626F4D034001556E5 /* LICENSE_OFL.txt in Resources */,
 				9DB4E93026FE12D30070204D /* お疲れ1.png in Resources */,
 				9DBFF20A26E2876100FE7616 /* Honoka_Shin_Mincho_L.otf in Resources */,
@@ -385,6 +384,7 @@
 				9DCCDF8226FB780500BD1914 /* ししし.png in Resources */,
 				9D969B3226FC293300E845B5 /* sagyoo.png in Resources */,
 				9D969B2E26FC293300E845B5 /* hagyoo.png in Resources */,
+				9D441818275A2565002B084B /* tukaikata¥.png in Resources */,
 				9DB4E93526FE12DB0070204D /* お疲れ2.png in Resources */,
 				9D969B2D26FC293300E845B5 /* kagyoo.png in Resources */,
 				9D969B5526FC34B800E845B5 /* uirororo.png in Resources */,

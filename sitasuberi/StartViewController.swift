@@ -77,7 +77,7 @@ class StartViewController: UIViewController, UICollectionViewDataSource, UIColle
     
 }else if indexPath.item == 89 || indexPath.item == 90 || indexPath.item == 91 || indexPath.item == 92 {
     let tukaikataViewController = self.storyboard?.instantiateViewController(withIdentifier: "TukaikataVC") as! TukaikataViewController
-    tukaikataViewController.tukaikataImage = UIImage(named: "tukaikata2.png")!
+    tukaikataViewController.tukaikataImage = UIImage(named: "tukaikata¥.png")!
     self.navigationController?.pushViewController(tukaikataViewController, animated: true)
     print("the cell item selected is: \(indexPath.item)")
     print("the cell row selected is: \(indexPath.row)")
