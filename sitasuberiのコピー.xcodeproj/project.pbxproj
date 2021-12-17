@@ -10,8 +10,8 @@
 		9D1FACDE276359ED00F8AE55 /* お疲れ1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACDD276359ED00F8AE55 /* お疲れ1.png */; };
 		9D1FACE0276359F400F8AE55 /* お疲れ2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACDF276359F400F8AE55 /* お疲れ2.png */; };
 		9D1FACE22763647400F8AE55 /* Syuryo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FACE12763647400F8AE55 /* Syuryo2ViewController.swift */; };
-		9D1FACE427636C1800F8AE55 /* 絵文字1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACE327636C1800F8AE55 /* 絵文字1.png */; };
-		9D1FACE627636C2100F8AE55 /* 絵文字2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACE527636C2100F8AE55 /* 絵文字2.png */; };
+		9D1FACE427636C1800F8AE55 /* emoji1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACE327636C1800F8AE55 /* emoji1.png */; };
+		9D1FACE627636C2100F8AE55 /* emoji2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACE527636C2100F8AE55 /* emoji2.png */; };
 		9D441818275A2565002B084B /* tukaikata¥.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D441817275A2565002B084B /* tukaikata¥.png */; };
 		9D557873272C0E2B00C9D423 /* bidakuon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D557872272C0E2B00C9D423 /* bidakuon.png */; };
 		9D580BDD269D739500C4AD25 /* SecondCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D580BDC269D739500C4AD25 /* SecondCollectionViewLayout.swift */; };
@@ -77,8 +77,8 @@
 		9D1FACDD276359ED00F8AE55 /* お疲れ1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "お疲れ1.png"; sourceTree = "<group>"; };
 		9D1FACDF276359F400F8AE55 /* お疲れ2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "お疲れ2.png"; sourceTree = "<group>"; };
 		9D1FACE12763647400F8AE55 /* Syuryo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syuryo2ViewController.swift; sourceTree = "<group>"; };
-		9D1FACE327636C1800F8AE55 /* 絵文字1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "絵文字1.png"; sourceTree = "<group>"; };
-		9D1FACE527636C2100F8AE55 /* 絵文字2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "絵文字2.png"; sourceTree = "<group>"; };
+		9D1FACE327636C1800F8AE55 /* emoji1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji1.png; sourceTree = "<group>"; };
+		9D1FACE527636C2100F8AE55 /* emoji2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji2.png; sourceTree = "<group>"; };
 		9D441817275A2565002B084B /* tukaikata¥.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tukaikata¥.png"; sourceTree = "<group>"; };
 		9D557872272C0E2B00C9D423 /* bidakuon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bidakuon.png; sourceTree = "<group>"; };
 		9D580BDC269D739500C4AD25 /* SecondCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -172,8 +172,8 @@
 				9D1FACDD276359ED00F8AE55 /* お疲れ1.png */,
 				9D1FACDF276359F400F8AE55 /* お疲れ2.png */,
 				9D557872272C0E2B00C9D423 /* bidakuon.png */,
-				9D1FACE327636C1800F8AE55 /* 絵文字1.png */,
-				9D1FACE527636C2100F8AE55 /* 絵文字2.png */,
+				9D1FACE327636C1800F8AE55 /* emoji1.png */,
+				9D1FACE527636C2100F8AE55 /* emoji2.png */,
 				9DCCDF8126FB780500BD1914 /* ししし.png */,
 			);
 			path = "原稿用紙";
@@ -372,7 +372,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D1FACE627636C2100F8AE55 /* 絵文字2.png in Resources */,
+				9D1FACE627636C2100F8AE55 /* emoji2.png in Resources */,
 				9DA4EED526F4D034001556E5 /* アプリ明朝.otf in Resources */,
 				9D969B2C26FC293300E845B5 /* agyoo.png in Resources */,
 				9DA4EED626F4D034001556E5 /* LICENSE_OFL.txt in Resources */,
@@ -382,7 +382,7 @@
 				9D5A83F4266A5D7800AF0E7E /* Main.storyboard in Resources */,
 				9DA4EED326F4D034001556E5 /* アプリ明朝UD.otf in Resources */,
 				9D969B3D26FC2BC000E845B5 /* tagyoou.png in Resources */,
-				9D1FACE427636C1800F8AE55 /* 絵文字1.png in Resources */,
+				9D1FACE427636C1800F8AE55 /* emoji1.png in Resources */,
 				9D969B4726FC2BE900E845B5 /* ragyoou.png in Resources */,
 				9DA4EED426F4D034001556E5 /* ReadMe.txt in Resources */,
 				9D969B3126FC293300E845B5 /* nagyoo.png in Resources */,

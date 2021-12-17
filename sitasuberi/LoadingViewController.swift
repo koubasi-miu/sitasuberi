@@ -8,15 +8,15 @@
 import UIKit
 
 class LoadingViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
     var i:Int = 0
     var hayakutiArray = [String]()
     var selectArray = [String]()
-   // var u:Int = 0
+    // var u:Int = 0
     
-  //  let u = selectArray.count
+    //  let u = selectArray.count
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +27,14 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
         
         collectionView.dataSource = self
         collectionView.delegate = self
-
+        
         hayakutiArray.shuffle()
         
-       // choicehayakuti()
+        // choicehayakuti()
         // Do any additional setup after loading the view.
     }
     
-  //  var selectArray = [String]()
+    //  var selectArray = [String]()
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -46,7 +46,7 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! NewCollectionViewCell
         
-       // let tempArray = hayakutiArray[i]
+        // let tempArray = hayakutiArray[i]
         
         let selectArray = Array(hayakutiArray[i])
         
@@ -54,47 +54,43 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
         let length = selectArray.count
         if indexPath[1] < length {
             cell.label.text = String((selectArray[indexPath[1]]))
-           
-        
+            
+            
             if String((selectArray[indexPath[1]])) == "ー"{
                 let angle = 90 * CGFloat.pi / 180
                 let affine = CGAffineTransform(a: cos(angle), b:sin(angle),
-                                                       c: sin(angle), d: -cos(angle),
-                                                       tx: 0, ty: 0)
+                                               c: sin(angle), d: -cos(angle),
+                                               tx: 0, ty: 0)
                 cell.label.transform = affine
-
+                
             }else if String(selectArray[indexPath[1]]) == "、" || String(selectArray[indexPath[1]]) == "、" {
                 cell.label.textAlignment = .right
                 cell.label.text = String(selectArray[indexPath[1]]) + "\n"
             }
-              }else {
+        }else {
             cell.label.text = ""
         }
         
         return cell
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == 107 || indexPath.item == 108 || indexPath.item == 109 {
-            
-         //   hayakutiArray.remove(at: 0)
-           i = i + 1
-       //     i = i - 1
-            
+            i = i + 1
             print("表示\(i)")
-        
+            
             collectionView.reloadData()
             
-           if i == hayakutiArray.count - 1 {
-          //  if i == i{
-            let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
-            syuryo2ViewController.number = Int.random(in: 0...1)
-            if syuryo2ViewController.number == 0 {
-                syuryo2ViewController.sutaImage = UIImage(named: "絵文字1.png")!
-            }else{
-                syuryo2ViewController.sutaImage = UIImage(named: "絵文字2.png")!
-            }
+            if i == hayakutiArray.count - 1 {
+                //  if i == i{
+                let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
+                syuryo2ViewController.number = Int.random(in: 0...1)
+                if syuryo2ViewController.number == 0 {
+                    syuryo2ViewController.sutaImage = UIImage(named: "emoji1.png")!
+                }else{
+                    syuryo2ViewController.sutaImage = UIImage(named: "emoji2.png")!
+                }
                 self.navigationController?.pushViewController(syuryo2ViewController, animated: true)
             }
             print("the cell item selected is: \(indexPath.item)")
