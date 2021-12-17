@@ -322,10 +322,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo9-7q-jHk">
-                                <rect key="frame" x="131" y="541" width="65" height="245"/>
+                                <rect key="frame" x="118" y="500" width="39" height="246"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="modoru" destination="QPY-tP-Wex" eventType="touchUpInside" id="jqp-sW-mFX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1E-XM-3Jm">
+                                <rect key="frame" x="66" y="482" width="44" height="251"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="settei" destination="QPY-tP-Wex" eventType="touchUpInside" id="Sqv-Ib-1jw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itr-0K-faH">
+                                <rect key="frame" x="30" y="479" width="38" height="267"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="mouitido" destination="QPY-tP-Wex" eventType="touchUpInside" id="ZbG-gU-Df2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -553,6 +569,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xCI-jF-EZr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4719" y="-54"/>
+        </scene>
+        <!--Syuryo2 View Controller-->
+        <scene sceneID="9WQ-3k-yVI">
+            <objects>
+                <viewController storyboardIdentifier="Syuryo2VC" id="rdl-vo-ZQi" customClass="Syuryo2ViewController" customModule="sitasuberi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GSl-L0-LAp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CzG-5h-OPV">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.94873291250000003" green="0.94977051020000003" blue="0.90195536610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewLayout key="collectionViewLayout" id="w5x-Qq-M0c" customClass="NewCollectionViewLayout" customModule="sitasuberi" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="Td3-Fv-zrF" customClass="NewCollectionViewCell" customModule="sitasuberi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n7x-6V-Q8W">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mz6-5x-EKc">
+                                                    <rect key="frame" x="1" y="16" width="48.5" height="18"/>
+                                                    <fontDescription key="fontDescription" name="AppliMincho" family="AppliMincho" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <color key="highlightedColor" red="0.074094585640000002" green="0.074281035379999999" blue="0.071024222750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mz6-5x-EKc" firstAttribute="centerX" secondItem="n7x-6V-Q8W" secondAttribute="centerX" id="Dt2-29-aRc"/>
+                                                <constraint firstItem="Mz6-5x-EKc" firstAttribute="centerY" secondItem="n7x-6V-Q8W" secondAttribute="centerY" id="bh2-Xv-7x7"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="Mz6-5x-EKc" id="PlF-QF-Mmx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kQ7-Gn-ol9">
+                                <rect key="frame" x="227" y="468" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="Zcd-5P-QhW"/>
+                                    <constraint firstAttribute="width" constant="160" id="oK3-JV-FMX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IZ8-lg-eks"/>
+                        <color key="backgroundColor" red="0.94873291250000003" green="0.94977051020000003" blue="0.90195536610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="kQ7-Gn-ol9" firstAttribute="centerY" secondItem="GSl-L0-LAp" secondAttribute="centerY" constant="100" id="Pv9-4t-fwE"/>
+                            <constraint firstItem="kQ7-Gn-ol9" firstAttribute="centerX" secondItem="GSl-L0-LAp" secondAttribute="centerX" constant="100" id="Ud4-9y-mVR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="CzG-5h-OPV" id="BnC-R1-dT6"/>
+                        <outlet property="imageView" destination="kQ7-Gn-ol9" id="xry-44-JJ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Fa-1r-Lit" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2869.5652173913045" y="2414.7321428571427"/>
         </scene>
     </scenes>
     <resources>

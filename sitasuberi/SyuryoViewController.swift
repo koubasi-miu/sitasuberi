@@ -25,6 +25,17 @@ class SyuryoViewController: UIViewController {
         self.navigationController?.pushViewController(startViewController, animated: true)
     }
     
+    @IBAction func settei() {
+        let decideViewController = self.storyboard?.instantiateViewController(withIdentifier: "DecideVC") as! DecideViewController
+        self.navigationController?.pushViewController(decideViewController, animated: true)
+    }
+    
+    @IBAction func mouitido() {
+        let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
+        self.navigationController?.pushViewController(loadingViewController, animated: true)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let screenSize: CGRect = UIScreen.main.bounds
@@ -44,9 +55,12 @@ class SyuryoViewController: UIViewController {
         otuImageView.addSubview(imageView)
         
         // Do any additional setup after loading the view.
+        
     }
     
 
-    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    return otuImageView
+}
 
 }

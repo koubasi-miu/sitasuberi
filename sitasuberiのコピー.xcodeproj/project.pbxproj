@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D1FACDE276359ED00F8AE55 /* お疲れ1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACDD276359ED00F8AE55 /* お疲れ1.png */; };
+		9D1FACE0276359F400F8AE55 /* お疲れ2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACDF276359F400F8AE55 /* お疲れ2.png */; };
+		9D1FACE22763647400F8AE55 /* Syuryo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FACE12763647400F8AE55 /* Syuryo2ViewController.swift */; };
+		9D1FACE427636C1800F8AE55 /* 絵文字1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACE327636C1800F8AE55 /* 絵文字1.png */; };
+		9D1FACE627636C2100F8AE55 /* 絵文字2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D1FACE527636C2100F8AE55 /* 絵文字2.png */; };
 		9D441818275A2565002B084B /* tukaikata¥.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D441817275A2565002B084B /* tukaikata¥.png */; };
 		9D557873272C0E2B00C9D423 /* bidakuon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D557872272C0E2B00C9D423 /* bidakuon.png */; };
 		9D580BDD269D739500C4AD25 /* SecondCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D580BDC269D739500C4AD25 /* SecondCollectionViewLayout.swift */; };
@@ -40,8 +45,6 @@
 		9DABDB5B26986B7700AA6C23 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DABDB5A26986B7700AA6C23 /* ChallengeViewController.swift */; };
 		9DABDB6326986E8600AA6C23 /* MemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DABDB6226986E8600AA6C23 /* MemoryViewController.swift */; };
 		9DB4E92B26FE0FD10070204D /* SyuryoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4E92A26FE0FD10070204D /* SyuryoViewController.swift */; };
-		9DB4E93026FE12D30070204D /* お疲れ1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4E92F26FE12D30070204D /* お疲れ1.png */; };
-		9DB4E93526FE12DB0070204D /* お疲れ2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DB4E93426FE12DA0070204D /* お疲れ2.png */; };
 		9DBFF20A26E2876100FE7616 /* Honoka_Shin_Mincho_L.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9DBFF20726E2876100FE7616 /* Honoka_Shin_Mincho_L.otf */; };
 		9DCCDF8226FB780500BD1914 /* ししし.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DCCDF8126FB780500BD1914 /* ししし.png */; };
 		9DCDC5F0269995A9004AB71B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCDC5EF269995A9004AB71B /* SceneDelegate.swift */; };
@@ -71,6 +74,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D1FACDD276359ED00F8AE55 /* お疲れ1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "お疲れ1.png"; sourceTree = "<group>"; };
+		9D1FACDF276359F400F8AE55 /* お疲れ2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "お疲れ2.png"; sourceTree = "<group>"; };
+		9D1FACE12763647400F8AE55 /* Syuryo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syuryo2ViewController.swift; sourceTree = "<group>"; };
+		9D1FACE327636C1800F8AE55 /* 絵文字1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "絵文字1.png"; sourceTree = "<group>"; };
+		9D1FACE527636C2100F8AE55 /* 絵文字2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "絵文字2.png"; sourceTree = "<group>"; };
 		9D441817275A2565002B084B /* tukaikata¥.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tukaikata¥.png"; sourceTree = "<group>"; };
 		9D557872272C0E2B00C9D423 /* bidakuon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bidakuon.png; sourceTree = "<group>"; };
 		9D580BDC269D739500C4AD25 /* SecondCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCollectionViewLayout.swift; sourceTree = "<group>"; };
@@ -110,8 +118,6 @@
 		9DABDB5A26986B7700AA6C23 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		9DABDB6226986E8600AA6C23 /* MemoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryViewController.swift; sourceTree = "<group>"; };
 		9DB4E92A26FE0FD10070204D /* SyuryoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyuryoViewController.swift; sourceTree = "<group>"; };
-		9DB4E92F26FE12D30070204D /* お疲れ1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "お疲れ1.png"; sourceTree = "<group>"; };
-		9DB4E93426FE12DA0070204D /* お疲れ2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "お疲れ2.png"; sourceTree = "<group>"; };
 		9DBFF20726E2876100FE7616 /* Honoka_Shin_Mincho_L.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Honoka_Shin_Mincho_L.otf; sourceTree = "<group>"; };
 		9DCCDF8126FB780500BD1914 /* ししし.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ししし.png"; sourceTree = "<group>"; };
 		9DCDC5EF269995A9004AB71B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,9 +169,11 @@
 				9D969B2A26FC293300E845B5 /* wagyouu.png */,
 				9D969B5426FC34B800E845B5 /* uirororo.png */,
 				9D441817275A2565002B084B /* tukaikata¥.png */,
+				9D1FACDD276359ED00F8AE55 /* お疲れ1.png */,
+				9D1FACDF276359F400F8AE55 /* お疲れ2.png */,
 				9D557872272C0E2B00C9D423 /* bidakuon.png */,
-				9DB4E92F26FE12D30070204D /* お疲れ1.png */,
-				9DB4E93426FE12DA0070204D /* お疲れ2.png */,
+				9D1FACE327636C1800F8AE55 /* 絵文字1.png */,
+				9D1FACE527636C2100F8AE55 /* 絵文字2.png */,
 				9DCCDF8126FB780500BD1914 /* ししし.png */,
 			);
 			path = "原稿用紙";
@@ -214,6 +222,7 @@
 				9D95E64E273542B50003DC5A /* DecideViewController.swift */,
 				9DABDB5A26986B7700AA6C23 /* ChallengeViewController.swift */,
 				9DE2F71326AD544400BB0F1A /* LoadingViewController.swift */,
+				9D1FACE12763647400F8AE55 /* Syuryo2ViewController.swift */,
 				9DB4E92A26FE0FD10070204D /* SyuryoViewController.swift */,
 				9D80775926AD6EBB00D16A2F /* SecondViewController.swift */,
 				9DABDB6226986E8600AA6C23 /* MemoryViewController.swift */,
@@ -363,19 +372,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1FACE627636C2100F8AE55 /* 絵文字2.png in Resources */,
 				9DA4EED526F4D034001556E5 /* アプリ明朝.otf in Resources */,
 				9D969B2C26FC293300E845B5 /* agyoo.png in Resources */,
 				9DA4EED626F4D034001556E5 /* LICENSE_OFL.txt in Resources */,
-				9DB4E93026FE12D30070204D /* お疲れ1.png in Resources */,
 				9DBFF20A26E2876100FE7616 /* Honoka_Shin_Mincho_L.otf in Resources */,
 				9D5A83F9266A5D7900AF0E7E /* LaunchScreen.storyboard in Resources */,
 				9D5A83F6266A5D7900AF0E7E /* Assets.xcassets in Resources */,
 				9D5A83F4266A5D7800AF0E7E /* Main.storyboard in Resources */,
 				9DA4EED326F4D034001556E5 /* アプリ明朝UD.otf in Resources */,
 				9D969B3D26FC2BC000E845B5 /* tagyoou.png in Resources */,
+				9D1FACE427636C1800F8AE55 /* 絵文字1.png in Resources */,
 				9D969B4726FC2BE900E845B5 /* ragyoou.png in Resources */,
 				9DA4EED426F4D034001556E5 /* ReadMe.txt in Resources */,
 				9D969B3126FC293300E845B5 /* nagyoo.png in Resources */,
+				9D1FACE0276359F400F8AE55 /* お疲れ2.png in Resources */,
+				9D1FACDE276359ED00F8AE55 /* お疲れ1.png in Resources */,
 				9D969B4226FC2BCD00E845B5 /* magyoou.png in Resources */,
 				9D557873272C0E2B00C9D423 /* bidakuon.png in Resources */,
 				9D969B3526FC293300E845B5 /* yagyoo.png in Resources */,
@@ -385,7 +397,6 @@
 				9D969B3226FC293300E845B5 /* sagyoo.png in Resources */,
 				9D969B2E26FC293300E845B5 /* hagyoo.png in Resources */,
 				9D441818275A2565002B084B /* tukaikata¥.png in Resources */,
-				9DB4E93526FE12DB0070204D /* お疲れ2.png in Resources */,
 				9D969B2D26FC293300E845B5 /* kagyoo.png in Resources */,
 				9D969B5526FC34B800E845B5 /* uirororo.png in Resources */,
 			);
@@ -412,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D1FACE22763647400F8AE55 /* Syuryo2ViewController.swift in Sources */,
 				9DE2F70C26AD4E0300BB0F1A /* ItirandetailViewController.swift in Sources */,
 				9DABDB5B26986B7700AA6C23 /* ChallengeViewController.swift in Sources */,
 				9D80775A26AD6EBB00D16A2F /* SecondViewController.swift in Sources */,

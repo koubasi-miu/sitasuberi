@@ -88,14 +88,14 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
             
            if i == hayakutiArray.count - 1 {
           //  if i == i{
-            let syuryoViewController = self.storyboard?.instantiateViewController(withIdentifier: "SyuryoVC") as! SyuryoViewController
-            syuryoViewController.number = Int.random(in: 0...1)
-            if syuryoViewController.number == 0 {
-                syuryoViewController.otuImage = UIImage(named: "お疲れ1.png")!
+            let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
+            syuryo2ViewController.number = Int.random(in: 0...1)
+            if syuryo2ViewController.number == 0 {
+                syuryo2ViewController.sutaImage = UIImage(named: "絵文字1.png")!
             }else{
-                syuryoViewController.otuImage = UIImage(named: "お疲れ2.png")!
+                syuryo2ViewController.sutaImage = UIImage(named: "絵文字2.png")!
             }
-                self.navigationController?.pushViewController(syuryoViewController, animated: true)
+                self.navigationController?.pushViewController(syuryo2ViewController, animated: true)
             }
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")

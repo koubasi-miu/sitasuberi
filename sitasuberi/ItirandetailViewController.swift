@@ -37,8 +37,6 @@ class ItirandetailViewController: UIViewController, UIScrollViewDelegate {
                
 //
         self.imageView.contentMode = .scaleAspectFit
-               // 表示する画像
-            //   let UIImage = UIImage(named: "itiranImageArray")!
               
             // 画像のサイズ
                let imgW = itiranImage.size.width
@@ -71,11 +69,7 @@ class ItirandetailViewController: UIViewController, UIScrollViewDelegate {
                scrollView.showsVerticalScrollIndicator = false //縦スクロールを不可
      
     }
-//        // ナビゲーションを透明にする処理
-//        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        self.navigationController!.navigationBar.shadowImage = UIImage()
-//    }
-//
+
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
     return imageView
 }
