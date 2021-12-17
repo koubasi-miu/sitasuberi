@@ -246,12 +246,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBI-bz-Grf">
+                                <rect key="frame" x="50" y="94" width="110" height="110"/>
+                                <color key="backgroundColor" red="0.70916869859999998" green="0.78594413019999998" blue="0.84286258820000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="17b-OP-xfr"/>
+                                    <constraint firstAttribute="width" constant="110" id="1Sc-yT-tUh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kgx-4f-3Kt"/>
                         <color key="backgroundColor" red="0.94873291250000003" green="0.94977051020000003" blue="0.90195536610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="oBI-bz-Grf" firstAttribute="top" secondItem="kgx-4f-3Kt" secondAttribute="top" constant="50" id="WzI-ub-slE"/>
+                            <constraint firstItem="oBI-bz-Grf" firstAttribute="leading" secondItem="kgx-4f-3Kt" secondAttribute="leading" constant="50" id="sWG-oA-5u1"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="00Z-r0-vXf" id="UyQ-Gg-rUh"/>
+                        <outlet property="countLabel" destination="oBI-bz-Grf" id="joC-F1-jBL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uag-B7-6dA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
