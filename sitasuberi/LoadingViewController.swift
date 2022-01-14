@@ -12,14 +12,14 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var countLabel: UILabel!
-    var time = 30
+    var time = 0
     var timer = Timer()
-    var i:Int = 0
+    var i = 0
     var hayakutiArray = [String]()
     var selectArray = [String]()
-    // var u:Int = 0
     
-    //  let u = selectArray.count
+    
+//    func countLabel.backgroundColor = UIColor(patternImage: UIImage(named: "kauntowaku.png")!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,8 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        countLabel.backgroundColor = UIColor(patternImage: UIImage(named: "kauntowaku.png")!)
         
         countLabel.text = String(time)
         hayakutiArray.shuffle()
@@ -81,18 +83,16 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == 107 || indexPath.item == 108 || indexPath.item == 109 {
-            i = i + 1
+            i = i - 1
             print("表示\(i)")
             
             collectionView.reloadData()
             
             
-            if i == 5 {
+            if i == 0 {
                 
- //           if i == hayakutiArray.count - 1 {
-                
-                //  if i == i{
                 let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
+                timer.invalidate()
                 syuryo2ViewController.number = Int.random(in: 0...1)
                 if syuryo2ViewController.number == 0 {
                     syuryo2ViewController.sutaImage = UIImage(named: "emoji1.png")!
@@ -100,23 +100,16 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
                     syuryo2ViewController.sutaImage = UIImage(named: "emoji2.png")!
                 }
                 self.navigationController?.pushViewController(syuryo2ViewController, animated: true)
+                
+               
+                    
+                }
             }
             print("the cell item selected is: \(indexPath.item)")
             print("the cell row selected is: \(indexPath.row)")
-        }else if self.time == 0{
-            timer.invalidate()
-            
-            let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
-            syuryo2ViewController.number = Int.random(in: 0...1)
-            if syuryo2ViewController.number == 0 {
-                syuryo2ViewController.sutaImage = UIImage(named: "emoji1.png")!
-            }else{
-                syuryo2ViewController.sutaImage = UIImage(named: "emoji2.png")!
-            }
-            self.navigationController?.pushViewController(syuryo2ViewController, animated: true)
         }
         
     }
     
     
-}
+

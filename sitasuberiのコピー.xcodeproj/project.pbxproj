@@ -21,6 +21,7 @@
 		9D5A83F9266A5D7900AF0E7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5A83F7266A5D7900AF0E7E /* LaunchScreen.storyboard */; };
 		9D5A8404266A5D7900AF0E7E /* sitasuberiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A8403266A5D7900AF0E7E /* sitasuberiTests.swift */; };
 		9D5A840F266A5D7900AF0E7E /* sitasuberiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5A840E266A5D7900AF0E7E /* sitasuberiUITests.swift */; };
+		9D6E3EBC276F18C500DEE332 /* kauntowaku.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D6E3EBB276F18C500DEE332 /* kauntowaku.png */; };
 		9D80775A26AD6EBB00D16A2F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D80775926AD6EBB00D16A2F /* SecondViewController.swift */; };
 		9D95E64F273542B50003DC5A /* DecideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D95E64E273542B50003DC5A /* DecideViewController.swift */; };
 		9D969B2C26FC293300E845B5 /* agyoo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D969B2226FC293300E845B5 /* agyoo.png */; };
@@ -94,6 +95,7 @@
 		9D5A840A266A5D7900AF0E7E /* sitasuberiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sitasuberiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D5A840E266A5D7900AF0E7E /* sitasuberiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sitasuberiUITests.swift; sourceTree = "<group>"; };
 		9D5A8410266A5D7900AF0E7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D6E3EBB276F18C500DEE332 /* kauntowaku.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kauntowaku.png; sourceTree = "<group>"; };
 		9D80775926AD6EBB00D16A2F /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9D95E64E273542B50003DC5A /* DecideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideViewController.swift; sourceTree = "<group>"; };
 		9D969B2226FC293300E845B5 /* agyoo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agyoo.png; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				9D557872272C0E2B00C9D423 /* bidakuon.png */,
 				9D1FACE327636C1800F8AE55 /* emoji1.png */,
 				9D1FACE527636C2100F8AE55 /* emoji2.png */,
+				9D6E3EBB276F18C500DEE332 /* kauntowaku.png */,
 				9DCCDF8126FB780500BD1914 /* ししし.png */,
 			);
 			path = "原稿用紙";
@@ -395,6 +398,7 @@
 				9D969B3426FC293300E845B5 /* wagyouu.png in Resources */,
 				9DCCDF8226FB780500BD1914 /* ししし.png in Resources */,
 				9D969B3226FC293300E845B5 /* sagyoo.png in Resources */,
+				9D6E3EBC276F18C500DEE332 /* kauntowaku.png in Resources */,
 				9D969B2E26FC293300E845B5 /* hagyoo.png in Resources */,
 				9D441818275A2565002B084B /* tukaikata¥.png in Resources */,
 				9D969B2D26FC293300E845B5 /* kagyoo.png in Resources */,
