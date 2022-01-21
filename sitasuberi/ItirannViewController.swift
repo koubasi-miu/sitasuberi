@@ -19,8 +19,8 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        itiranImageArray = ["shi.png", "uirou.png"]
+        
+        //        itiranImageArray = ["shi.png", "uirou.png"]
         self.collectionView.bounds.size.width = self.view.bounds.size.width-10
         self.collectionView.bounds.size.height = self.view.bounds.size.height
         self.collectionView.center = self.view.center
@@ -29,7 +29,7 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
         collectionView.delegate = self
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 160
     }
@@ -44,26 +44,26 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
             if String(selectArray[indexPath[1]]) == "ー"{
                 //Labelの回転などを行う場合にはアフィン変換を利用する
                 let angle = 90 * CGFloat.pi / 180
-//                cell.label.transform = CGAffineTransform(scaleX: -1, y: 1);
-//                cell.label.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+                //                cell.label.transform = CGAffineTransform(scaleX: -1, y: 1);
+                //                cell.label.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
                 let affine = CGAffineTransform(a: cos(angle), b:sin(angle),
-                                                       c: sin(angle), d: -cos(angle),
-                                                       tx: 0, ty: 0)
+                                               c: sin(angle), d: -cos(angle),
+                                               tx: 0, ty: 0)
                 cell.label.transform = affine
-
+                
             }else if String(selectArray[indexPath[1]]) == "、" || String(selectArray[indexPath[1]]) == "、" {
                 cell.label.textAlignment = .right
                 cell.label.text = String(selectArray[indexPath[1]]) + "\n"
             }
-              }else {
+        }else {
             cell.label.text = ""
         }
-
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         if indexPath.item == 32 || indexPath.item == 33 || indexPath.item == 34{
+        if indexPath.item == 32 || indexPath.item == 33 || indexPath.item == 34{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
             itirandetailViewController.itiranImage = UIImage(named: "agyoo.png")!
@@ -98,7 +98,7 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
             
             
             self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-       }else if  indexPath.item == 68 || indexPath.item == 69 || indexPath.item == 70{
+        }else if  indexPath.item == 68 || indexPath.item == 69 || indexPath.item == 70{
             let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
             
             itirandetailViewController.itiranImage = UIImage(named: "hagyoo.png")!
@@ -150,9 +150,5 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
         }
         print("the cell item selected is: \(indexPath.item)")
         print("the cell row selected is: \(indexPath.row)")
-        
-    
-}
-
-
+    }
 }
