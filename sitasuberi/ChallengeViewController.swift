@@ -14,6 +14,7 @@ class ChallengeViewController: UIViewController,UICollectionViewDataSource, UICo
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
     var isRecording = false
+    var isPlaying = false
     
     var selectArray = Array("  どの一覧を練習しますか？" + String(repeating:" ", count: 18) + "▼あ行" + String(repeating:" ", count: 1) + "▼か行" + String(repeating:" ", count: 1) + "▼さ行" + String(repeating:" ", count: 1) + "▼た行" + String(repeating:" ", count: 17) + "▼な行" + String(repeating:" ", count: 1) + "▼は行" + String(repeating:" ", count: 1) + "▼ま行" + String(repeating:" ", count: 1) + "▼や行" + String(repeating:" ", count: 17) + "▼ら行" + String(repeating:" ", count: 1) + "▼わ行" + String(repeating:" ", count: 1) + "▼外郎売")
     
@@ -349,8 +350,18 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
             audioRecorder = try! AVAudioRecorder(url: getURL(), settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
+        }else{
+            audioRecorder.stop()
+            isRecording = false
         }
         isRecording = !isRecording
+        
+        func getURL() -> URL{
+                let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+                let docsDirect = paths[0]
+                let url = docsDirect.appendingPathComponent("recording.m4a")
+                return url
+            }
         
         
         loadingViewController.hayakutiArray = ["　　　　　　　　　　　　　　　　　わらわば笑え、わらわは、笑われるいわれはないわえ。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　岩井はお岩へお祝いをいう。お会いしてお祝いを言うわ。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　わらなわでは、わなにはよわいわい。岩をゆわえるなわは、わらなわではよわいわよ。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　わしの家のわしの木に鷲が止まったから、わしは鉄砲で鷲をうったら、鷲も驚いたがわしも驚いた。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　小岩界わいで祝い事があり、わいわいさわいで祝酒飲んだ。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　若いものが我先に渡しをこいで、川を渡る。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　分け前をもらえぬわけがわからない。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　わたしは、和紙に鰯の絵をかいて、詫び状つけてわたし、和解した。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　渡守が新しい渡し舟で渡初した。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　若殿のわがままは、悪遊び悪知恵がついて、悪ずれするか、若死にするか今が分かれ目。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　わたしの庭で、沸き出ずる泉。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　若菜、若苗、わさびにわらび。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ","　　　　　　　　　　　　　　　　　若者の和気あいあいの笑い声、わしも笑って若返る。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　▼次へ"]

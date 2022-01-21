@@ -18,8 +18,7 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
     var hayakutiArray = [String]()
     var selectArray = [String]()
     
-    
-//    func countLabel.backgroundColor = UIColor(patternImage: UIImage(named: "kauntowaku.png")!)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +30,12 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        countLabel.backgroundColor = UIColor(patternImage: UIImage(named: "kauntowaku.png")!)
         
         countLabel.text = String(time)
         hayakutiArray.shuffle()
         
-        // choicehayakuti()
-        // Do any additional setup after loading the view.
-    }
+            }
     
-    //  var selectArray = [String]()
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -52,7 +47,6 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! NewCollectionViewCell
         
-        // let tempArray = hayakutiArray[i]
         
         let selectArray = Array(hayakutiArray[i])
         

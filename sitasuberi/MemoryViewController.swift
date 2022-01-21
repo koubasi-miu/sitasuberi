@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import AVFoundation
 
-class MemoryViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
+class MemoryViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, AVAudioPlayerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-
-    var selectArray = Array("　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　｜ただいま準備中です｜")
+    var audioPlayer: AVAudioPlayer!
+    var isPlaying = false
+    var selectArray = Array("　　　これまでの記録" + String(repeating:" ", count: 41) + "再生")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +59,28 @@ class MemoryViewController: UIViewController,UICollectionViewDataSource, UIColle
         }
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        
+        if indexPath.item == 48 || indexPath.item == 49 {
+            if !isPlaying {
+                
+                audioPlayer = try! AVAudioPlayer(contentsOf: getURL())
+                        audioPlayer.delegate = self
+                        audioPlayer.play()
+
+                        isPlaying = true
+            }else{
+                
+                audioPlayer.stop()
+                isPlaying = false
+            }
+        }
+        print("the cell item selected is: \(indexPath.item)")
+        print("the cell row selected is: \(indexPath.row)")
+        
     }
     
     

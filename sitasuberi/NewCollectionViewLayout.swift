@@ -2,17 +2,18 @@ import UIKit
 
 class NewCollectionViewLayout: UICollectionViewLayout {
     // セルのサイズ
-    let cellSize: CGFloat = 50
+    var cellSize: CGFloat {
+        guard let collectionView = collectionView else { return 0 }
+        let allHeight = collectionView.bounds.height - 130
+        return allHeight / CGFloat(rows)
+    }
     var cellCount: Int {
         guard let collectionView = collectionView else { return 0 }
         return collectionView.visibleCells.count
     }
-    
     // 行数
     var rows: Int {
-        guard let collectionView = collectionView else { return 0 }
-        let allHeight = collectionView.bounds.height - 100
-        return Int(allHeight / cellSize)
+        return 16
     }
     var columns: Int {
         guard let collectionView = collectionView else { return 0 }
