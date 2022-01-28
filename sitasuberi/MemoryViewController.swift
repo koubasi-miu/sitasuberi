@@ -61,11 +61,20 @@ class MemoryViewController: UIViewController,UICollectionViewDataSource, UIColle
         return cell
     }
     
+    
+    func getURL() -> URL{
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            let docsDirect = paths[0]
+            let url = docsDirect.appendingPathComponent("recording.m4a")
+            return url
+        }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         
-        if indexPath.item == 48 || indexPath.item == 49 {
+        if indexPath.item == 51 || indexPath.item == 52 {
             if !isPlaying {
+                
                 
                 audioPlayer = try! AVAudioPlayer(contentsOf: getURL())
                         audioPlayer.delegate = self
