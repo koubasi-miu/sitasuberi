@@ -8,11 +8,12 @@
 import UIKit
 import AVFoundation
 
-class MemoryViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, AVAudioPlayerDelegate {
+class MemoryViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate, AVAudioPlayerDelegate{
 
     @IBOutlet weak var collectionView: UICollectionView!
     var audioPlayer: AVAudioPlayer!
     var isPlaying = false
+ //   private var semiModalPresenter = SemiModalPresenter()
     var selectArray = Array("　　　これまでの記録" + String(repeating:" ", count: 41) + "再生")
     
     override func viewDidLoad() {
@@ -73,24 +74,20 @@ class MemoryViewController: UIViewController,UICollectionViewDataSource, UIColle
 
         
         if indexPath.item == 51 || indexPath.item == 52 {
-            if !isPlaying {
-                
-                
-                audioPlayer = try! AVAudioPlayer(contentsOf: getURL())
-                        audioPlayer.delegate = self
-                        audioPlayer.play()
-
-                        isPlaying = true
-            }else{
-                
-                audioPlayer.stop()
-                isPlaying = false
-            }
+            
+            let vc = UIViewController()
+                 vc.modalPresentationStyle = .pageSheet
+                 present(vc, animated: true, completion: nil)
+            
+            let viewController = ModalViewController
+                 .instantiateInitialViewControllerFromStoryboard()
+             present(viewController, animated: true)
+            
         }
-        print("the cell item selected is: \(indexPath.item)")
-        print("the cell row selected is: \(indexPath.row)")
         
     }
     
     
+
 }
+

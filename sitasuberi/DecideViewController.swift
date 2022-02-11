@@ -7,21 +7,17 @@
 
 import UIKit
 
-class DecideViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class DecideViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    var choice: String!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var titleArray = Array("　　　設定を決めましょう" + String(repeating: " ", count: 4) + "▼行" + String(repeating: "　",count: 2) + "〇〇〇〇" + String(repeating: "　", count: 24) + "▼個数" + String(repeating: "　", count: 1) + "〇個" + String(repeating: "　", count: 26) + "▼時間" + String(repeating: "　", count: 1) + "〇〇〇〇" + String(repeating: "　", count: 24) + "▼録音" +  String(repeating: "　", count: 1) + "〇" + String(repeating:"　", count: 7) + "次へ")
     
-    var pickerView: UIPickerView = UIPickerView()
-    let pickerViewHeight:CGFloat = 160
-    var pickerToolbar:UIToolbar!
-    let toolbarHeight:CGFloat = 40.0
     var gyolist = ["あ行","か行","さ行","た行","な行","は行","ま行","や行","ら行","わ行","外郎売"]
     var kosulist = ["三個","五個","八個","十個","十五個","全て"]
     var jikanlist = ["カウントダウン","時間計測"]
     var rokuonlist = ["〇","×"]
-    var pickerIndexPath:IndexPath!
     
     
     override func viewDidLoad() {
@@ -32,79 +28,100 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
         
         let width = self.view.frame.width
         let height = self.view.frame.height
-        pickerView.delegate = self
-        pickerView.dataSource = self
-//        pickerView.showsSelectionIndicator = true
-        pickerView = UIPickerView(frame:CGRect(x:0,y:height + toolbarHeight,
-                                               width:width,height:pickerViewHeight))
-//        self.view.addSubview(pickerView)
-        
-        pickerToolbar = UIToolbar(frame:CGRect(x:0,y:height,width:width,height:toolbarHeight))
-        let flexible = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-        let doneBtn = UIBarButtonItem(title: "完了", style: .plain, target: self, action: #selector(self.doneTapped))
-        pickerToolbar.items = [flexible,doneBtn]
-//        self.view.addSubview(pickerToolbar)
         
         collectionView.dataSource = self
         collectionView.delegate = self
         // Do any additional setup after loading the view.
     }
     
-    
-    @objc func doneTapped(){
-        collectionView.reloadData()
-    }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return pickerIndexPath.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(pickerIndexPath != nil){
-            switch (pickerIndexPath.row){
-            case 0:
-                return gyolist.count
-            case 1:
-                return kosulist.count
-            case 2:
-                return jikanlist.count
-            case 3:
-                return rokuonlist.count
-            default:
-                return 0
-            }
-        }else{
-            return 0
-        }
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch (pickerIndexPath.row){
-        case 0:
-            return gyolist[row]
-        case 1:
-            return kosulist[row]
-        case 2:
-            return jikanlist[row]
-        case 3:
-            return rokuonlist[row]
-        default:
-            return ""  }
-    }
-    
+            
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == 124 || indexPath.item == 125 {
             let challengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeVC") as! ChallengeViewController
             self.navigationController?.pushViewController(challengeViewController, animated: true)
-            print("the cell item selected is: \(indexPath.item)")
-            print("the cell row selected is: \(indexPath.row)")
-        }else if indexPath.item == 24 || indexPath.item == 25 {
-            self.view.addSubview(pickerView)
-        }
+        }else if indexPath.item == 20 || indexPath.item == 21 || indexPath.item == 22 || indexPath.item == 23 {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
+            vc.choices += gyolist
+            if #available(iOS 15.0, *) {
+                if let sheet = vc.sheetPresentationController {
+                    // モーダルのサイズを指定する
+                    sheet.detents = [.medium(), .large()]
+                    // 上部の短いバーを表示する（デフォルトは非表示）
+                    sheet.prefersGrabberVisible = true
+                    // 元のViewControllerも操作できるようにする
+                 //   sheet.largestUndimmedDetentIdentifier = .medium
+                }
+                present(vc, animated: true, completion: nil)
+            }
+            }else if indexPath.item == 52 || indexPath.item == 53 {
+                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
+                vc.choices += kosulist
+                if #available(iOS 15.0, *) {
+                    if let sheet = vc.sheetPresentationController {
+                        // モーダルのサイズを指定する
+                        sheet.detents = [.medium(), .large()]
+                        // 上部の短いバーを表示する（デフォルトは非表示）
+                        sheet.prefersGrabberVisible = true
+                        // 元のViewControllerも操作できるようにする
+                       // sheet.largestUndimmedDetentIdentifier = .medium
+                    }
+                    present(vc, animated: true, completion: nil)
+                    
+                }
+                let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
+                func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+                        
+                        switch component {
+                        case 0:
+                            loadingViewController.i = 3
+                        case 1:
+                            loadingViewController.i = 5
+                        case 2:
+                            loadingViewController.i = 8
+                        case 3:
+                            loadingViewController.i = 10
+                        case 4:
+                            loadingViewController.i = 15
+                        case 5:
+                            loadingViewController.i = loadingViewController.hayakutiArray.count
+                        default:
+                            return 0
+                        }
+                    return 0
+                    }
+            }else if indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86 || indexPath.item == 87 {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
+            vc.choices += jikanlist
+            if #available(iOS 15.0, *) {
+                if let sheet = vc.sheetPresentationController {
+                    // モーダルのサイズを指定する
+                    sheet.detents = [.medium(), .large()]
+                    // 上部の短いバーを表示する（デフォルトは非表示）
+                    sheet.prefersGrabberVisible = true
+                    // 元のViewControllerも操作できるようにする
+                  //  sheet.largestUndimmedDetentIdentifier = .medium
+                }
+                present(vc, animated: true, completion: nil)
+            }
+        }else if indexPath.item == 116 || indexPath.item == 117 {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
+            vc.choices += rokuonlist
+            if #available(iOS 15.0, *) {
+                if let sheet = vc.sheetPresentationController {
+                    // モーダルのサイズを指定する
+                    sheet.detents = [.medium(), .large()]
+                    // 上部の短いバーを表示する（デフォルトは非表示）
+                    sheet.prefersGrabberVisible = true
+                    // 元のViewControllerも操作できるようにする
+                //    sheet.largestUndimmedDetentIdentifier = .medium
+                }
+                present(vc, animated: true, completion: nil)
+            }
+            }else{
         print("the cell item selected is: \(indexPath.item)")
         print("the cell row selected is: \(indexPath.row)")
-        
         }
+    }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -133,11 +150,10 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
         } else {
             cell.label.text = ""
         }
-        
-        
         return cell
     }
             
     }
     
     
+

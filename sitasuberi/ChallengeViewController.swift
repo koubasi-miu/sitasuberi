@@ -70,28 +70,6 @@ class ChallengeViewController: UIViewController,UICollectionViewDataSource, UICo
         return cell
         
     }
-    
-   
-//    func senni() {
-//        let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
-//        loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-//                    loadingViewController.time -= 1
-//                    loadingViewController.countLabel.text = String(loadingViewController.time)
-//
-//                    if loadingViewController.time == 0 {
-//                        timer.invalidate()
-//                        let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
-//                        syuryo2ViewController.number = Int.random(in: 0...1)
-//                        if syuryo2ViewController.number == 0 {
-//                            syuryo2ViewController.sutaImage = UIImage(named: "emoji1.png")!
-//                        }else{
-//                            syuryo2ViewController.sutaImage = UIImage(named: "emoji2.png")!
-//                        }
-//                        self.navigationController?.pushViewController(syuryo2ViewController, animated: true)
-//
-//                    }
-//                })
-//    }
 
 func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if indexPath.item == 32 || indexPath.item == 33 || indexPath.item == 34 {
@@ -329,7 +307,7 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     }else if indexPath.item == 100 || indexPath.item == 101 || indexPath.item == 102 {
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
 
-        loadingViewController.i = 10
+      //  loadingViewController.i = 10
         loadingViewController.time = 0
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
                     loadingViewController.time += 1
