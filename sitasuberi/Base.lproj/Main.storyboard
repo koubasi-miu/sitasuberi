@@ -222,15 +222,18 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NT-UB-EfC">
                                 <rect key="frame" x="285" y="287" width="109" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.074094585640000002" green="0.074281035379999999" blue="0.071024222750000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="決定">
+                                    <fontDescription key="titleFontDescription" name="appliMinchoOld" family="appliMinchoOld" pointSize="15"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="submit" destination="HbX-gT-Jom" eventType="touchUpInside" id="4gP-c3-fVK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZB1-iK-V6F"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.94977051020000003" blue="0.90195536610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="JQT-uZ-N04" id="xDf-Rm-ySq"/>

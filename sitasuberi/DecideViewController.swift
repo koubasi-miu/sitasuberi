@@ -9,7 +9,6 @@ import UIKit
 
 class DecideViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var choice: String!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var titleArray = Array("　　　設定を決めましょう" + String(repeating: " ", count: 4) + "▼行" + String(repeating: "　",count: 2) + "〇〇〇〇" + String(repeating: "　", count: 24) + "▼個数" + String(repeating: "　", count: 1) + "〇個" + String(repeating: "　", count: 26) + "▼時間" + String(repeating: "　", count: 1) + "〇〇〇〇" + String(repeating: "　", count: 24) + "▼録音" +  String(repeating: "　", count: 1) + "〇" + String(repeating:"　", count: 7) + "次へ")
@@ -42,6 +41,7 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
         }else if indexPath.item == 20 || indexPath.item == 21 || indexPath.item == 22 || indexPath.item == 23 {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
             vc.choices += gyolist
+            vc.selectdrow = 1
             if #available(iOS 15.0, *) {
                 if let sheet = vc.sheetPresentationController {
                     // モーダルのサイズを指定する
@@ -56,6 +56,7 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
             }else if indexPath.item == 52 || indexPath.item == 53 {
                 let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
                 vc.choices += kosulist
+                vc.selectdrow = 2
                 if #available(iOS 15.0, *) {
                     if let sheet = vc.sheetPresentationController {
                         // モーダルのサイズを指定する
@@ -68,30 +69,31 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
                     present(vc, animated: true, completion: nil)
                     
                 }
-                let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
-                func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-                        
-                        switch component {
-                        case 0:
-                            loadingViewController.i = 3
-                        case 1:
-                            loadingViewController.i = 5
-                        case 2:
-                            loadingViewController.i = 8
-                        case 3:
-                            loadingViewController.i = 10
-                        case 4:
-                            loadingViewController.i = 15
-                        case 5:
-                            loadingViewController.i = loadingViewController.hayakutiArray.count
-                        default:
-                            return 0
-                        }
-                    return 0
-                    }
+//                let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
+//                func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//                        switch component {
+//                        // 1列目が選択された時
+//                        case 0:
+//                            loadingViewController.i = 3
+//                        // 2列目が選択された時
+//                        case 1:
+//                            loadingViewController.i = 5
+//                        case 2:
+//                            loadingViewController.i = 8
+//                        case 3:
+//                            loadingViewController.i = 10
+//                        case 4:
+//                            loadingViewController.i = 15
+//                        case 5:
+//                            loadingViewController.i = loadingViewController.hayakutiArray.count
+//                        default:
+//                            break
+//                        }
+                  //  }
             }else if indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86 || indexPath.item == 87 {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
             vc.choices += jikanlist
+                vc.selectdrow = 3
             if #available(iOS 15.0, *) {
                 if let sheet = vc.sheetPresentationController {
                     // モーダルのサイズを指定する
@@ -106,6 +108,7 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
         }else if indexPath.item == 116 || indexPath.item == 117 {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
             vc.choices += rokuonlist
+            vc.selectdrow = 4
             if #available(iOS 15.0, *) {
                 if let sheet = vc.sheetPresentationController {
                     // モーダルのサイズを指定する

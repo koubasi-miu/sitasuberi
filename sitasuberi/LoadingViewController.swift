@@ -47,7 +47,7 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! NewCollectionViewCell
         
-        
+        print("\(i)")
         let selectArray = Array(hayakutiArray[i])
         
         print("表示されるのは\(i)")
