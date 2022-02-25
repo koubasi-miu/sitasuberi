@@ -14,9 +14,10 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
     var titleArray = Array("　　　設定を決めましょう" + String(repeating: " ", count: 4) + "▼行" + String(repeating: "　",count: 2) + "〇〇〇〇" + String(repeating: "　", count: 24) + "▼個数" + String(repeating: "　", count: 1) + "〇個" + String(repeating: "　", count: 26) + "▼時間" + String(repeating: "　", count: 1) + "〇〇〇〇" + String(repeating: "　", count: 24) + "▼録音" +  String(repeating: "　", count: 1) + "〇" + String(repeating:"　", count: 7) + "次へ")
     
     var gyolist = ["あ行","か行","さ行","た行","な行","は行","ま行","や行","ら行","わ行","外郎売"]
-    var kosulist = ["三個","五個","八個","十個","十五個","全て"]
+    var kosulist = ["三個","五個","八個","十個","全て"]
     var jikanlist = ["カウントダウン","時間計測"]
     var rokuonlist = ["〇","×"]
+    var test: String!
     
     
     override func viewDidLoad() {
@@ -36,8 +37,8 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
             
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item == 124 || indexPath.item == 125 {
-            let challengeViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChallengeVC") as! ChallengeViewController
-            self.navigationController?.pushViewController(challengeViewController, animated: true)
+            let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
+            self.navigationController?.pushViewController(loadingViewController, animated: true)
         }else if indexPath.item == 20 || indexPath.item == 21 || indexPath.item == 22 || indexPath.item == 23 {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
             vc.choices += gyolist
