@@ -75,15 +75,15 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
         
         let count = UserDefaults.standard.string(forKey: "count")
         switch count {
-        case "3":
+        case "さん":
             i = 3
-        case "5":
+        case "ご":
             i = 5
-        case "8":
+        case "はち":
             i = 8
-        case "10":
+        case "じゅう":
             i = 10
-        case "15":
+        case "ぜんぶ":
             i = hayakutiArray.count
         default:
             break

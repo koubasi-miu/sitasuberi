@@ -91,15 +91,15 @@ extension ChoiceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         }else if selectdrow == 2{
             switch component {
             case 0:
-                resultValue = "3"
+                resultValue = "さん"
             case 1:
-                resultValue = "5"
+                resultValue = "ご"
             case 2:
-                resultValue = "8"
+                resultValue = "はち"
             case 3:
-                resultValue = "10"
+                resultValue = "じゅう"
             case 4:
-                resultValue = "15"
+                resultValue = "ぜんぶ"
             default:
                 break
             }
