@@ -75,10 +75,10 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     if indexPath.item == 32 || indexPath.item == 33 || indexPath.item == 34 {
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
                         syuryo2ViewController.number = Int.random(in: 0...1)
@@ -100,10 +100,10 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     }else if indexPath.item == 36 || indexPath.item == 37 || indexPath.item == 38 {
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
                         syuryo2ViewController.number = Int.random(in: 0...1)
@@ -126,10 +126,10 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     }else if indexPath.item == 40 || indexPath.item == 41 || indexPath.item == 42 {
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
                         syuryo2ViewController.number = Int.random(in: 0...1)
@@ -151,10 +151,10 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     }else if indexPath.item == 44 || indexPath.item == 45 || indexPath.item == 46 {
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
                         syuryo2ViewController.number = Int.random(in: 0...1)
@@ -175,10 +175,10 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     }else if indexPath.item == 64 || indexPath.item == 65 || indexPath.item == 66 {
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
@@ -201,10 +201,10 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
         
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
@@ -228,10 +228,10 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
         
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
                         syuryo2ViewController.number = Int.random(in: 0...1)
@@ -253,12 +253,12 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     }else if indexPath.item == 76 || indexPath.item == 77 || indexPath.item == 78 {
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
         loadingViewController.i = 5
-        loadingViewController.time = 90
+        loadingViewController.times = 90
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
@@ -279,13 +279,13 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
         print("the cell row selected is: \(indexPath.row)")
     }else if indexPath.item == 96 || indexPath.item == 97 || indexPath.item == 98 {
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
-        loadingViewController.time = 30
+        loadingViewController.times = 30
         loadingViewController.i = 5
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
@@ -308,10 +308,10 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
 
       //  loadingViewController.i = 10
-        loadingViewController.time = 0
+        loadingViewController.times = 0
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time += 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times += 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
             
                 })
 
@@ -350,10 +350,10 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
     }else if indexPath.item == 104 || indexPath.item == 105 || indexPath.item == 106 || indexPath.item == 107 {
         let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
         loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
+                    loadingViewController.times -= 1
+                    loadingViewController.countLabel.text = String(loadingViewController.times)
                     
-                    if loadingViewController.time == 0 {
+                    if loadingViewController.times == 0 {
                         timer.invalidate()
                         
                         let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController

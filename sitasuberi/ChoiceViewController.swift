@@ -34,6 +34,8 @@ class ChoiceViewController: UIViewController{
                 UserDefaults.standard.set(resultValue, forKey: "gyo")
             case 2:
                 UserDefaults.standard.set(resultValue, forKey: "count")
+            case 3:
+                UserDefaults.standard.set(resultValue, forKey: "time")
             default:
                 break
             }
@@ -62,7 +64,7 @@ extension ChoiceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if selectdrow == 1{
-            switch component {
+            switch row {
             case 0:
                 resultValue = "agyo"
             case 1:
@@ -89,50 +91,40 @@ extension ChoiceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 break
             }
         }else if selectdrow == 2{
-            switch component {
-            case 0:
+            switch row {
+             case 0:
                 resultValue = "さん"
-            case 1:
+             case 1:
                 resultValue = "ご"
-            case 2:
+             case 2:
                 resultValue = "はち"
-            case 3:
+             case 3:
                 resultValue = "じゅう"
-            case 4:
+             case 4:
                 resultValue = "ぜんぶ"
-            default:
+             default:
                 break
             }
         }else if selectdrow == 3{
-            let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
-            switch component {
+            switch row {
             case 0:
-                loadingViewController.time = 30
-                loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time -= 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
-                    
-                    if loadingViewController.time == 0 {
-                        timer.invalidate()
-                        
-                        let syuryo2ViewController = self.storyboard?.instantiateViewController(withIdentifier: "Syuryo2VC") as! Syuryo2ViewController
-                        syuryo2ViewController.number = Int.random(in: 0...1)
-                        if syuryo2ViewController.number == 0 {
-                            syuryo2ViewController.sutaImage = UIImage(named: "emoji1.png")!
-                        }else{
-                            syuryo2ViewController.sutaImage = UIImage(named: "emoji2.png")!
-                        }
-                        self.navigationController?.pushViewController(syuryo2ViewController, animated: true)
-                        
-                    }
-                })
+                resultValue = "じゅう"
             case 1:
-                loadingViewController.time = 0
-                loadingViewController.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
-                    loadingViewController.time += 1
-                    loadingViewController.countLabel.text = String(loadingViewController.time)
-                    
-                })
+                resultValue = "にじゅう"
+            case 2:
+                resultValue = "さんじゅう"
+            case 3:
+                resultValue = "よんご"
+            case 4:
+                resultValue = "いっぷん"
+            case 5:
+                resultValue = "きゅうじゅう"
+            case 6:
+                resultValue = "にふん"
+            case 7:
+                resultValue = "さんふん"
+            case 8:
+                resultValue = "けいそく"
             default:
                 break
             }

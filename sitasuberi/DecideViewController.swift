@@ -15,7 +15,7 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     var gyolist = ["あ行","か行","さ行","た行","な行","は行","ま行","や行","ら行","わ行","外郎売"]
     var kosulist = ["三個","五個","八個","十個","全て"]
-    var jikanlist = ["カウントダウン","時間計測"]
+    var jikanlist = ["カウントダウン10秒","カウントダウン20秒","カウントダウン30秒","カウントダウン45秒","カウントダウン1分","カウントダウン1分30秒","カウントダウン2分","カウントダウン3分","時間計測"]
     var rokuonlist = ["〇","×"]
     var test: String!
     
@@ -70,27 +70,6 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
                     present(vc, animated: true, completion: nil)
                     
                 }
-//                let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
-//                func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//                        switch component {
-//                        // 1列目が選択された時
-//                        case 0:
-//                            loadingViewController.i = 3
-//                        // 2列目が選択された時
-//                        case 1:
-//                            loadingViewController.i = 5
-//                        case 2:
-//                            loadingViewController.i = 8
-//                        case 3:
-//                            loadingViewController.i = 10
-//                        case 4:
-//                            loadingViewController.i = 15
-//                        case 5:
-//                            loadingViewController.i = loadingViewController.hayakutiArray.count
-//                        default:
-//                            break
-//                        }
-                  //  }
             }else if indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86 || indexPath.item == 87 {
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
             vc.choices += jikanlist
