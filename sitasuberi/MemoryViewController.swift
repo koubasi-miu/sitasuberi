@@ -19,8 +19,9 @@ class MemoryViewController: UIViewController,UICollectionViewDataSource, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let audioRecorder: AudioRecorder = AudioRecorder()
         
-        self.collectionView.bounds.size.width = self.view.bounds.size.width-10
+        self.collectionView.bounds.size.width = self.view.bounds.size.width-45
         self.collectionView.bounds.size.height = self.view.bounds.size.height
         self.collectionView.center = self.view.center
         
@@ -37,7 +38,6 @@ class MemoryViewController: UIViewController,UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! NewCollectionViewCell
-        
         
         let length = selectArray.count
         if indexPath[1] < length {
@@ -62,26 +62,14 @@ class MemoryViewController: UIViewController,UICollectionViewDataSource, UIColle
         return cell
     }
     
-    
-    func getURL() -> URL{
-            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            let docsDirect = paths[0]
-            let url = docsDirect.appendingPathComponent("recording.m4a")
-            return url
-        }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         
         if indexPath.item == 51 || indexPath.item == 52 {
+            let audioRecorder: AudioRecorder = AudioRecorder()
+            let gyo = UserDefaults.standard.string(forKey: "gyo")
+            audioRecorder.play(a: gyo ?? "default")
             
-            let vc = UIViewController()
-                 vc.modalPresentationStyle = .pageSheet
-                 present(vc, animated: true, completion: nil)
-            
-            let viewController = ModalViewController
-                 .instantiateInitialViewControllerFromStoryboard()
-             present(viewController, animated: true)
             
         }
         

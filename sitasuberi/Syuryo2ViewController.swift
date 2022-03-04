@@ -26,7 +26,7 @@ class Syuryo2ViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.bounds.size.width = self.view.bounds.size.width-10
+        self.collectionView.bounds.size.width = self.view.bounds.size.width-45
         self.collectionView.bounds.size.height = self.view.bounds.size.height
         self.collectionView.center = self.view.center
         

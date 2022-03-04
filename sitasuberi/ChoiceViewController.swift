@@ -22,7 +22,7 @@ class ChoiceViewController: UIViewController{
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
-        
+      //  pickerView.showsSelectionIndicator = true
         // Do any additional setup after loading the view.
     }
     
@@ -36,6 +36,8 @@ class ChoiceViewController: UIViewController{
                 UserDefaults.standard.set(resultValue, forKey: "count")
             case 3:
                 UserDefaults.standard.set(resultValue, forKey: "time")
+            case 4:
+                UserDefaults.standard.set(resultValue, forKey: "rokuon")
             default:
                 break
             }
@@ -125,6 +127,15 @@ extension ChoiceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
                 resultValue = "さんふん"
             case 8:
                 resultValue = "けいそく"
+            default:
+                break
+            }
+        }else if selectdrow == 4{
+            switch row{
+            case 0:
+                resultValue = "yes"
+            case 1:
+                resultValue = "no"
             default:
                 break
             }

@@ -45,6 +45,8 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let audioRecorder: AudioRecorder = AudioRecorder()
+        
         let gyo = UserDefaults.standard.string(forKey: "gyo")
         switch gyo {
         case "agyo":
@@ -84,7 +86,7 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
         case "じゅう":
             i = 10
         case "ぜんぶ":
-            i = hayakutiArray.count
+            i = hayakutiArray.count - 1
         default:
             break
         }
@@ -137,7 +139,17 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
             })
         }
         
-        self.collectionView.bounds.size.width = self.view.bounds.size.width-10
+        let rokuon = UserDefaults.standard.string(forKey: "rokuon")
+        switch rokuon {
+        case "yes":
+            audioRecorder.record(a: gyo ?? "default")
+        case "no":
+            times = 20
+        default:
+            break
+        }
+        
+        self.collectionView.bounds.size.width = self.view.bounds.size.width-45
         self.collectionView.bounds.size.height = self.view.bounds.size.height
         self.collectionView.center = self.view.center
         
@@ -208,7 +220,9 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
                 }
                 self.navigationController?.pushViewController(syuryo2ViewController, animated: true)
                 
-                
+                let audioRecorder: AudioRecorder = AudioRecorder()
+                let gyo = UserDefaults.standard.string(forKey: "gyo")
+             //   audioRecorder.recordStop(a: gyo ?? "default")
                 
             }
         }
