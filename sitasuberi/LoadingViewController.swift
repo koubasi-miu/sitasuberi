@@ -142,14 +142,14 @@ class LoadingViewController: UIViewController,UICollectionViewDataSource, UIColl
         let rokuon = UserDefaults.standard.string(forKey: "rokuon")
         switch rokuon {
         case "yes":
-            audioRecorder.record(a: gyo ?? "default")
+            audioRecorder.record(a: UserDefaults.standard.string(forKey: "fileName")!)
         case "no":
             times = 20
         default:
             break
         }
         
-        self.collectionView.bounds.size.width = self.view.bounds.size.width-45
+        self.collectionView.bounds.size.width = self.view.bounds.size.width-10
         self.collectionView.bounds.size.height = self.view.bounds.size.height
         self.collectionView.center = self.view.center
         

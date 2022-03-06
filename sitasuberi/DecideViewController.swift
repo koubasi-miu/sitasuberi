@@ -10,6 +10,8 @@ import UIKit
 class DecideViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    let userDefaults = UserDefaults.standard
+    var fileName: String!
     
     var titleArray = Array("　　　設定を決めましょう" + String(repeating: " ", count: 4) + "▼行" + String(repeating: "　",count: 2) + "〇〇〇〇" + String(repeating: "　", count: 24) + "▼個数" + String(repeating: "　", count: 1) + "〇個" + String(repeating: "　", count: 26) + "▼時間" + String(repeating: "　", count: 1) + "〇〇〇〇" + String(repeating: "　", count: 24) + "▼録音" +  String(repeating: "　", count: 1) + "〇" + String(repeating:"　", count: 7) + "次へ")
     
@@ -22,7 +24,7 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView.bounds.size.width = self.view.bounds.size.width-45
+        self.collectionView.bounds.size.width = self.view.bounds.size.width-10
         self.collectionView.bounds.size.height = self.view.bounds.size.height
         self.collectionView.center = self.view.center
         
@@ -32,6 +34,43 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        let rokuon = UserDefaults.standard.string(forKey: "rokuon")
+        switch rokuon {
+        case "yes":
+            var alertTextField: UITextField?
+
+                    let alert = UIAlertController(
+                        title: "録音名",
+                        message: "録音のデータに名前をつけてください",
+                        preferredStyle: UIAlertController.Style.alert)
+                    alert.addTextField(
+                        configurationHandler: { [self](textField: UITextField!) in
+                            alertTextField = textField
+                            UserDefaults.standard.set(fileName, forKey: "filename")
+                            fileName = textField.text
+                                //            textField.text = self.label1.text
+                            
+                            // textField.placeholder = "Mike"
+                            // textField.isSecureTextEntry = true
+                    })
+                    alert.addAction(
+                        UIAlertAction(
+                            title: "Cancel",
+                            style: UIAlertAction.Style.cancel,
+                            handler: nil))
+                    alert.addAction(
+                        UIAlertAction(
+                            title: "OK",
+                            style: UIAlertAction.Style.default) { _ in
+                            if let text = alertTextField?.text {
+                   //             self.label1.text = text
+                            }
+                        }
+                    )
+
+        default:
+            break
+        }
         // Do any additional setup after loading the view.
     }
     

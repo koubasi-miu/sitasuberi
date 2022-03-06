@@ -42,6 +42,8 @@ class ChoiceViewController: UIViewController{
                 break
             }
         self.dismiss(animated: true, completion: nil)
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
+        vc.viewDidLoad()
     }
     
 }
