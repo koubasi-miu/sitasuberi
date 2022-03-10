@@ -29,7 +29,8 @@ class DecideViewController: UIViewController {
         collectionView.delegate = self
     }
     
-    func checkRokuon() {
+    func checkRokuon() -> Bool {
+        var isOk = false
         if UserDefaults.standard.bool(forKey: "isRokuon") == true {
             var alertTextField: UITextField?
             let alert = UIAlertController(
@@ -52,11 +53,15 @@ class DecideViewController: UIViewController {
                     title: "OK",
                     style: UIAlertAction.Style.default) { _ in
                         if let text = alertTextField?.text {
-//                                         self.label1.text = text
+                            // OKの場合、保存名を格納してあげる
+                            UserDefaults.standard.set(text, forKey: "rokuonFileName")
+                            // 成功したことを記録する
+                            isOk = true
                         }
                     }
             )
         }
+        return isOk
     }
 }
 
