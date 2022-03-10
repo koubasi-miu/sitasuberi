@@ -8,7 +8,7 @@
 import UIKit
 
 class ChoiceViewController: UIViewController{
-    let userDefaults = UserDefaults.standard
+    let saveData = UserDefaults.standard
     var choices: [String] = []
     var selectedchoice: String!
     var selectdrow: Int!
@@ -24,13 +24,13 @@ class ChoiceViewController: UIViewController{
     @IBAction func submit() {
         switch selectdrow {
         case 1:
-            UserDefaults.standard.set(resultValue, forKey: "gyo")
+            saveData.set(resultValue, forKey: "gyo")
         case 2:
-            UserDefaults.standard.set(resultValue, forKey: "count")
+            saveData.set(resultValue, forKey: "count")
         case 3:
-            UserDefaults.standard.set(resultValue, forKey: "time")
+            saveData.set(resultValue, forKey: "time")
         case 4:
-            UserDefaults.standard.set(resultValue, forKey: "rokuon")
+            saveData.set(resultValue, forKey: "rokuon")
         default:
             break
         }
@@ -38,7 +38,6 @@ class ChoiceViewController: UIViewController{
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
         vc.viewDidLoad()
     }
-    
 }
 
 extension ChoiceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
