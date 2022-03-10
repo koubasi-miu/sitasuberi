@@ -34,9 +34,8 @@ class ChoiceViewController: UIViewController{
         default:
             break
         }
+        // ハーフモーダルを閉じる
         self.dismiss(animated: true, completion: nil)
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
-        vc.viewDidLoad()
     }
 }
 
