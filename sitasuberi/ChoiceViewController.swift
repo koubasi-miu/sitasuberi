@@ -30,7 +30,12 @@ class ChoiceViewController: UIViewController{
         case 3:
             saveData.set(resultValue, forKey: "time")
         case 4:
-            saveData.set(resultValue, forKey: "rokuon")
+            // trueかfalseで表せるものは、bool値で保存してあげよう！
+            if resultValue == "yes" {
+                saveData.set(true, forKey: "isRokuon")
+            } else {
+                saveData.set(false, forKey: "isRokuon")
+            }
         default:
             break
         }
