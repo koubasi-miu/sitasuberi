@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DecideViewController: UIViewController {
+class DecideViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var fileName: String!
@@ -17,6 +17,11 @@ class DecideViewController: UIViewController {
     var jikanList = ["カウントダウン10秒","カウントダウン20秒","カウントダウン30秒","カウントダウン45秒","カウントダウン1分","カウントダウン1分30秒","カウントダウン2分","カウントダウン3分","時間計測"]
     var rokuonList = ["〇","×"]
     var test: String!
+    let saveData: UserDefaults = UserDefaults.standard
+    var gyo: Int?
+    var count: Int?
+    var time: Int?
+    var isRokuon: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +32,16 @@ class DecideViewController: UIViewController {
         self.collectionView.center = self.view.center
         collectionView.dataSource = self
         collectionView.delegate = self
+        updateText()
+        
+        // 初期値取得
+        gyo = saveData.object(forKey: "gyo") as? Int
+        count = saveData.object(forKey: "count") as? Int
+        time = saveData.object(forKey: "time") as? Int
+        isRokuon = saveData.bool(forKey: "isRokuon")
+        
+        // 更新用のタイマーを設定
+        let _ = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateText), userInfo: nil, repeats: true)
     }
     
     func checkRokuon() -> Bool {
@@ -63,10 +78,67 @@ class DecideViewController: UIViewController {
         }
         return isOk
     }
-}
+    
+    @objc func updateText() {
+        let gyoUpdate = saveData.object(forKey: "gyo") as? Int
+        let countUpdate = saveData.object(forKey: "count") as? Int
+        let timeUpdate = saveData.object(forKey: "time") as? Int
+        let isRokuonUpdate = saveData.bool(forKey: "isRokuon")
+        var gyoText = "〇〇〇〇"
+        var countText = "〇個"
+        var timeText = "〇〇〇〇"
+        var isRokuonText = "×"
+        var isUpdate = false
+        
+        if gyoUpdate != nil && gyo != gyoUpdate {
+            gyo = gyoUpdate
+            isUpdate = true
+        }
+        
+        if countUpdate != nil && count != countUpdate {
+            count = countUpdate
+            isUpdate = true
+        }
+        
+        if timeUpdate != nil && time != timeUpdate {
+            time = timeUpdate
+            isUpdate = true
+        }
+        
+        if isRokuonUpdate == true && isRokuon != isRokuonUpdate {
+            isRokuon = isRokuonUpdate
+            isUpdate = true
+        }
+        
+        if gyo != nil {
+            gyoText = gyoList[gyo!]
+        }
+        if count != nil {
+            countText = kosuList[count!]
+        }
+        if time != nil {
+            timeText = jikanList[time!]
+        }
+        if isRokuonUpdate == true {
+            isRokuonText = "〇"
+        }
+        
+        if isUpdate {
+            titleArray = Array("　　　設定を決めましょう" + String(repeating: " ", count: 4) + "▼行" + String(repeating: "　",count: 2) + formatTextSize(text: gyoText, length: 4) + String(repeating: "　", count: 24) + "▼個数" + String(repeating: "　", count: 1) + formatTextSize(text: countText, length: 2) + String(repeating: "　", count: 26) + "▼時間" + String(repeating: "　", count: 1) + formatTextSize(text: timeText, length: 4) + String(repeating: "　", count: 24) + "▼録音" +  String(repeating: "　", count: 1) + isRokuonText + String(repeating:"　", count: 7) + "次へ")
+            collectionView.reloadData()
+        }
+    }
+    
+    func formatTextSize(text: String?, length: Int) -> String {
+        if text == nil {
+            return String(repeating: "〇", count: length)
+        }else if text!.count < length {
+            return text! + String(repeating: " ", count: length - text!.count)
+        } else {
+            return text!
+        }
+    }
 
-// CollectionView系のものをこちらに集約
-extension DecideViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     // ハーフモーダルを呼び出す関数を作ってあげる！同じものが繰り返される時は、こんな感じでまとめてあげよう！
     func showHalfmodal(selectMode: Int) {
         if let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as? ChoiceViewController {

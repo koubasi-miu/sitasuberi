@@ -12,7 +12,7 @@ class ChoiceViewController: UIViewController{
     var choices: [String] = []
     var selectedchoice: String!
     var selectdrow: Int!
-    var resultValue: String!
+    var resultValue: Int!
     @IBOutlet var pickerView: UIPickerView!
     
     override func viewDidLoad() {
@@ -31,7 +31,7 @@ class ChoiceViewController: UIViewController{
             saveData.set(resultValue, forKey: "time")
         case 4:
             // trueかfalseで表せるものは、bool値で保存してあげよう！
-            if resultValue == "yes" {
+            if resultValue == 0 {
                 saveData.set(true, forKey: "isRokuon")
             } else {
                 saveData.set(false, forKey: "isRokuon")
@@ -39,7 +39,6 @@ class ChoiceViewController: UIViewController{
         default:
             break
         }
-        // ハーフモーダルを閉じる
         self.dismiss(animated: true, completion: nil)
     }
 }
@@ -62,80 +61,81 @@ extension ChoiceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     // 選択されたときの挙動
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if selectdrow == 1{
-            switch row {
-            case 0:
-                resultValue = "agyo"
-            case 1:
-                resultValue = "kagyo"
-            case 2:
-                resultValue = "sagyo"
-            case 3:
-                resultValue = "tagyo"
-            case 4:
-                resultValue = "nagyo"
-            case 5:
-                resultValue = "hagyo"
-            case 6:
-                resultValue = "magyo"
-            case 7:
-                resultValue = "yagyo"
-            case 8:
-                resultValue = "ragyo"
-            case 9:
-                resultValue = "wagyo"
-            case 10:
-                resultValue = "uirou"
-            default:
-                break
-            }
-        }else if selectdrow == 2{
-            switch row {
-            case 0:
-                resultValue = "さん"
-            case 1:
-                resultValue = "ご"
-            case 2:
-                resultValue = "はち"
-            case 3:
-                resultValue = "じゅう"
-            case 4:
-                resultValue = "ぜんぶ"
-            default:
-                break
-            }
-        }else if selectdrow == 3{
-            switch row {
-            case 0:
-                resultValue = "じゅう"
-            case 1:
-                resultValue = "にじゅう"
-            case 2:
-                resultValue = "さんじゅう"
-            case 3:
-                resultValue = "よんご"
-            case 4:
-                resultValue = "いっぷん"
-            case 5:
-                resultValue = "きゅうじゅう"
-            case 6:
-                resultValue = "にふん"
-            case 7:
-                resultValue = "さんふん"
-            case 8:
-                resultValue = "けいそく"
-            default:
-                break
-            }
-        }else if selectdrow == 4{
-            switch row{
-            case 0:
-                resultValue = "yes"
-            case 1:
-                resultValue = "no"
-            default:
-                break
-            }
-        }
+        resultValue = row
+//        if selectdrow == 1{
+//            switch row {
+//            case 0:
+//                resultValue = "agyo"
+//            case 1:
+//                resultValue = "kagyo"
+//            case 2:
+//                resultValue = "sagyo"
+//            case 3:
+//                resultValue = "tagyo"
+//            case 4:
+//                resultValue = "nagyo"
+//            case 5:
+//                resultValue = "hagyo"
+//            case 6:
+//                resultValue = "magyo"
+//            case 7:
+//                resultValue = "yagyo"
+//            case 8:
+//                resultValue = "ragyo"
+//            case 9:
+//                resultValue = "wagyo"
+//            case 10:
+//                resultValue = "uirou"
+//            default:
+//                break
+//            }
+//        }else if selectdrow == 2{
+//            switch row {
+//            case 0:
+//                resultValue = "さん"
+//            case 1:
+//                resultValue = "ご"
+//            case 2:
+//                resultValue = "はち"
+//            case 3:
+//                resultValue = "じゅう"
+//            case 4:
+//                resultValue = "ぜんぶ"
+//            default:
+//                break
+//            }
+//        }else if selectdrow == 3{
+//            switch row {
+//            case 0:
+//                resultValue = "じゅう"
+//            case 1:
+//                resultValue = "にじゅう"
+//            case 2:
+//                resultValue = "さんじゅう"
+//            case 3:
+//                resultValue = "よんご"
+//            case 4:
+//                resultValue = "いっぷん"
+//            case 5:
+//                resultValue = "きゅうじゅう"
+//            case 6:
+//                resultValue = "にふん"
+//            case 7:
+//                resultValue = "さんふん"
+//            case 8:
+//                resultValue = "けいそく"
+//            default:
+//                break
+//            }
+//        }else if selectdrow == 4{
+//            switch row{
+//            case 0:
+//                resultValue = "yes"
+//            case 1:
+//                resultValue = "no"
+//            default:
+//                break
+//            }
+//        }
     }
 }
