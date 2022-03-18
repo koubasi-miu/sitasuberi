@@ -22,28 +22,27 @@ class ChoiceViewController: UIViewController{
         super.viewDidLoad()
         pickerView.delegate = self
         pickerView.dataSource = self
-      //  pickerView.showsSelectionIndicator = true
+        //  pickerView.showsSelectionIndicator = true
         // Do any additional setup after loading the view.
     }
     
     
     
     @IBAction func submit() {
-            switch selectdrow {
-            case 1:
-                UserDefaults.standard.set(resultValue, forKey: "gyo")
-            case 2:
-                UserDefaults.standard.set(resultValue, forKey: "count")
-            case 3:
-                UserDefaults.standard.set(resultValue, forKey: "time")
-            case 4:
-                UserDefaults.standard.set(resultValue, forKey: "rokuon")
-            default:
-                break
-            }
+        switch selectdrow {
+        case 1:
+            UserDefaults.standard.set(resultValue, forKey: "gyo")
+        case 2:
+            UserDefaults.standard.set(resultValue, forKey: "count")
+        case 3:
+            UserDefaults.standard.set(resultValue, forKey: "time")
+        case 4:
+            UserDefaults.standard.set(resultValue, forKey: "rokuon")
+        default:
+            break
+        }
         self.dismiss(animated: true, completion: nil)
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
-        vc.viewDidLoad()
+        
     }
     
 }
@@ -96,17 +95,17 @@ extension ChoiceViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             }
         }else if selectdrow == 2{
             switch row {
-             case 0:
+            case 0:
                 resultValue = "さん"
-             case 1:
+            case 1:
                 resultValue = "ご"
-             case 2:
+            case 2:
                 resultValue = "はち"
-             case 3:
+            case 3:
                 resultValue = "じゅう"
-             case 4:
+            case 4:
                 resultValue = "ぜんぶ"
-             default:
+            default:
                 break
             }
         }else if selectdrow == 3{

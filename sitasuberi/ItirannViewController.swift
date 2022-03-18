@@ -19,8 +19,8 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        itiranImageArray = ["shi.png", "uirou.png"]
+        
+        //        itiranImageArray = ["shi.png", "uirou.png"]
         self.collectionView.bounds.size.width = self.view.bounds.size.width-45
         self.collectionView.bounds.size.height = self.view.bounds.size.height
         self.collectionView.center = self.view.center
@@ -29,7 +29,7 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
         collectionView.delegate = self
     }
     
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 160
     }
@@ -44,122 +44,73 @@ class ItirannViewController: UIViewController,UICollectionViewDataSource, UIColl
             if String(selectArray[indexPath[1]]) == "ー"{
                 //Labelの回転などを行う場合にはアフィン変換を利用する
                 let angle = 90 * CGFloat.pi / 180
-//                cell.label.transform = CGAffineTransform(scaleX: -1, y: 1);
-//                cell.label.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+                //                cell.label.transform = CGAffineTransform(scaleX: -1, y: 1);
+                //                cell.label.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
                 let affine = CGAffineTransform(a: cos(angle), b:sin(angle),
-                                                       c: sin(angle), d: -cos(angle),
-                                                       tx: 0, ty: 0)
+                                               c: sin(angle), d: -cos(angle),
+                                               tx: 0, ty: 0)
                 cell.label.transform = affine
-
+                
             }else if String(selectArray[indexPath[1]]) == "、" || String(selectArray[indexPath[1]]) == "、" {
                 cell.label.textAlignment = .right
                 cell.label.text = String(selectArray[indexPath[1]]) + "\n"
             }
-              }else {
+        }else {
             cell.label.text = ""
         }
-
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-         if indexPath.item == 16 || indexPath.item == 17 || indexPath.item == 18{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
+        
+        switch indexPath.item {
+        case 16, 17, 18:
             itirandetailViewController.itiranImage = UIImage(named: "agyoo.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if  indexPath.item == 20 || indexPath.item == 21 || indexPath.item == 22{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 20, 21, 22:
             itirandetailViewController.itiranImage = UIImage(named: "kagyoo.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if  indexPath.item == 24 || indexPath.item == 25 || indexPath.item == 26{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 24, 25, 26:
             itirandetailViewController.itiranImage = UIImage(named: "sagyoo.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if  indexPath.item == 28 || indexPath.item == 29 || indexPath.item == 30{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 28, 29, 30:
             itirandetailViewController.itiranImage = UIImage(named: "tagyoou.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if  indexPath.item == 48 || indexPath.item == 49 || indexPath.item == 50{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 48, 49, 50:
             itirandetailViewController.itiranImage = UIImage(named: "nagyoo.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-       }else if  indexPath.item == 52 || indexPath.item == 53 || indexPath.item == 54{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 52, 53, 54:
             itirandetailViewController.itiranImage = UIImage(named: "hagyoo.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if  indexPath.item == 56 || indexPath.item == 57 || indexPath.item == 58{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 56, 57, 58:
             itirandetailViewController.itiranImage = UIImage(named: "magyoou.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if  indexPath.item == 60 || indexPath.item == 61 || indexPath.item == 62{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 60, 61, 62:
             itirandetailViewController.itiranImage = UIImage(named: "yagyoo.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if  indexPath.item == 80 || indexPath.item == 81 || indexPath.item == 82{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 80, 81, 82:
             itirandetailViewController.itiranImage = UIImage(named: "ragyoou.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if  indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86{
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 84, 85, 86:
             itirandetailViewController.itiranImage = UIImage(named: "wagyouu.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if indexPath.item == 88 || indexPath.item == 89 || indexPath.item == 90 || indexPath.item == 91 {
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 88, 89, 90, 91:
             itirandetailViewController.itiranImage = UIImage(named: "uirororo.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if indexPath.item == 93 || indexPath.item == 94 {
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 93, 94:
             itirandetailViewController.itiranImage = UIImage(named: "ししし.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
-        }else if indexPath.item == 112 || indexPath.item == 113 || indexPath.item == 114 || indexPath.item == 115 {
-            let itirandetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ItirandetailVC") as! ItirandetailViewController
-            
+        case 112, 113, 114, 115:
             itirandetailViewController.itiranImage = UIImage(named: "bidakuon.png")!
             
-            
-            self.navigationController?.pushViewController(itirandetailViewController, animated: true)
+        default:
+            break
         }
-        print("the cell item selected is: \(indexPath.item)")
-        print("the cell row selected is: \(indexPath.row)")
         
+        self.navigationController?.pushViewController(itirandetailViewController, animated: true)
+    }
     
-}
-
-
+    
 }

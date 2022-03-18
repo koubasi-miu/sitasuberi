@@ -8,13 +8,13 @@
 import UIKit
 
 class SyuryoViewController: UIViewController {
-
+    
     @IBOutlet weak var otuImageView: UIImageView!
     var scale:CGFloat = 1.0
-       // Screenの高さ
-       var screenHeight:CGFloat!
-       // Screenの幅
-       var screenWidth:CGFloat!
+    // Screenの高さ
+    var screenHeight:CGFloat!
+    // Screenの幅
+    var screenWidth:CGFloat!
     
     var otuImage = UIImage()
     
@@ -58,9 +58,9 @@ class SyuryoViewController: UIViewController {
         
     }
     
-
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-    return otuImageView
-}
-
+        return otuImageView
+    }
+    
 }

@@ -9,27 +9,22 @@ import UIKit
 
 class SideScrollViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
- 
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var titleArray = Array("                                   |滑舌チャレンジ|" + String(repeating: " ", count: 42) + "▼スタート")
-    
-
-   // let layout = SecondCollectionViewFlowLayout()
-//    layout.scrollDirection = .horizontal // 横スクロール
- //   collectionView.collectionViewLayout = layout
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.bounds.size.width = self.view.bounds.size.width
         self.collectionView.bounds.size.height = self.view.bounds.size.height
-     //   self.collectionView.center = self.view.center
+        //   self.collectionView.center = self.view.center
         
         collectionView.dataSource = self
         collectionView.delegate = self
     }
-   
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 160
     }
@@ -43,17 +38,17 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
             if String(titleArray[indexPath[1]]) == "ー"{
                 //Labelの回転などを行う場合にはアフィン変換を利用する
                 let angle = 90 * CGFloat.pi / 180
-
+                
                 let affine = CGAffineTransform(a: cos(angle), b:sin(angle),
-                                                       c: sin(angle), d: -cos(angle),
-                                                       tx: 0, ty: 0)
+                                               c: sin(angle), d: -cos(angle),
+                                               tx: 0, ty: 0)
                 cell.label.transform = affine
-
+                
             }else if String(titleArray[indexPath[1]]) == "、" || String(titleArray[indexPath[1]]) == "、" {
                 cell.label.textAlignment = .right
                 cell.label.text = String(titleArray[indexPath[1]]) + "\n"
             }
-       } else {
+        } else {
             cell.label.text = ""
         }
         
@@ -62,20 +57,17 @@ class SideScrollViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
         
-        if indexPath.item == 86 || indexPath.item == 87 || indexPath.item == 88 || indexPath.item == 89 || indexPath.item == 90 {
+        switch indexPath.item {
+        case 86 , 87 , 88 , 89 , 90:
             let startViewController = self.storyboard?.instantiateViewController(withIdentifier: "StartVC") as! StartViewController
             self.navigationController?.pushViewController(startViewController, animated: true)
-            print("the cell item selected is: \(indexPath.item)")
-            print("the cell row selected is: \(indexPath.row)")
+            
+        default:
+            break
         }
-        print("the cell item selected is: \(indexPath.item)")
-        print("the cell row selected is: \(indexPath.row)")
-        
     }
     
-
-  
-
+    
+    
 }

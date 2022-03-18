@@ -49,13 +49,7 @@ class Syuryo2ViewController: UIViewController, UICollectionViewDataSource, UICol
         let imgH = sutaImage.size.height
         
         scale = screenHeight / 4
-        let rect:CGRect = CGRect(x:0, y:0, width: imgW*scale, height: imgH*scale)
-        //        imageView.frame = rect;
-        
-        // UIImageView 初期化 インスタンス作成
-        //                let imageeView = UIImageView(image: sutaImage)
-        //              imageeView.frame = rect;
-        //               imageView.addSubview(imageeView)
+        //     let rect:CGRect = CGRect(x:0, y:0, width: imgW*scale, height: imgH*scale)
         imageView.image = sutaImage
     }
     
@@ -93,26 +87,21 @@ class Syuryo2ViewController: UIViewController, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        
-        if indexPath.item == 86 || indexPath.item == 87 || indexPath.item == 88 || indexPath.item == 89 || indexPath.item == 90 || indexPath.item == 91 || indexPath.item == 92 || indexPath.item == 93{
+        switch indexPath.item{
+        case 86, 87, 88, 89, 90, 91, 92, 93:
             let startViewController = self.storyboard?.instantiateViewController(withIdentifier: "StartVC") as! StartViewController
             self.navigationController?.pushViewController(startViewController, animated: true)
-            print("the cell item selected is: \(indexPath.item)")
-            print("the cell row selected is: \(indexPath.row)")
-        }else if indexPath.item == 103 || indexPath.item == 104 || indexPath.item == 105 || indexPath.item == 106 || indexPath.item == 107 {
+            
+        case 103, 104, 105, 106, 107:
             let decideViewController = self.storyboard?.instantiateViewController(withIdentifier: "DecideVC") as! DecideViewController
             self.navigationController?.pushViewController(decideViewController, animated: true)
-            print("the cell item selected is: \(indexPath.item)")
-            print("the cell row selected is: \(indexPath.row)")
-        }else if indexPath.item == 119 || indexPath.item == 120 || indexPath.item == 121 || indexPath.item == 122 || indexPath.item == 123 {
+            
+        case 119, 120, 121, 122, 123:
             let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
             self.navigationController?.pushViewController(loadingViewController, animated: true)
-            print("the cell item selected is: \(indexPath.item)")
-            print("the cell row selected is: \(indexPath.row)")
+        default:
+            break
         }
-        print("the cell item selected is: \(indexPath.item)")
-        print("the cell row selected is: \(indexPath.row)")
-        
     }
     
     

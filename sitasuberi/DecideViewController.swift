@@ -28,8 +28,8 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
         self.collectionView.bounds.size.height = self.view.bounds.size.height
         self.collectionView.center = self.view.center
         
-        let width = self.view.frame.width
-        let height = self.view.frame.height
+        //        let width = self.view.frame.width
+        //        let height = self.view.frame.height
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -38,112 +38,95 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
         switch rokuon {
         case "yes":
             var alertTextField: UITextField?
-
-                    let alert = UIAlertController(
-                        title: "録音名",
-                        message: "録音のデータに名前をつけてください",
-                        preferredStyle: UIAlertController.Style.alert)
-                    alert.addTextField(
-                        configurationHandler: { [self](textField: UITextField!) in
-                            alertTextField = textField
-                            UserDefaults.standard.set(fileName, forKey: "filename")
-                            fileName = textField.text
-                                //            textField.text = self.label1.text
-                            
-                            // textField.placeholder = "Mike"
-                            // textField.isSecureTextEntry = true
-                    })
-                    alert.addAction(
-                        UIAlertAction(
-                            title: "Cancel",
-                            style: UIAlertAction.Style.cancel,
-                            handler: nil))
-                    alert.addAction(
-                        UIAlertAction(
-                            title: "OK",
-                            style: UIAlertAction.Style.default) { _ in
-                            if let text = alertTextField?.text {
-                   //             self.label1.text = text
-                            }
-                        }
-                    )
-
+            
+            let alert = UIAlertController(
+                title: "録音名",
+                message: "録音のデータに名前をつけてください",
+                preferredStyle: UIAlertController.Style.alert)
+            alert.addTextField(
+                configurationHandler: { [self](textField: UITextField!) in
+                    alertTextField = textField
+                    UserDefaults.standard.set(fileName, forKey: "filename")
+                    fileName = textField.text
+                    
+                })
+            alert.addAction(
+                UIAlertAction(
+                    title: "Cancel",
+                    style: UIAlertAction.Style.cancel,
+                    handler: nil))
+            alert.addAction(
+                UIAlertAction(
+                    title: "OK",
+                    style: UIAlertAction.Style.default) { _ in
+                        //                            if let text = alertTextField?.text {
+                        //                   //             self.label1.text = text
+                        //                            }
+                    }
+            )
+            
         default:
             break
         }
-        // Do any additional setup after loading the view.
     }
     
-            
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item == 124 || indexPath.item == 125 {
-            let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
-            self.navigationController?.pushViewController(loadingViewController, animated: true)
-        }else if indexPath.item == 20 || indexPath.item == 21 || indexPath.item == 22 || indexPath.item == 23 {
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
+        
+        switch indexPath.item {
+        case 20, 21, 22, 23:
             vc.choices += gyolist
             vc.selectdrow = 1
             if #available(iOS 15.0, *) {
                 if let sheet = vc.sheetPresentationController {
-                    // モーダルのサイズを指定する
                     sheet.detents = [.medium(), .large()]
-                    // 上部の短いバーを表示する（デフォルトは非表示）
                     sheet.prefersGrabberVisible = true
-                    // 元のViewControllerも操作できるようにする
-                 //   sheet.largestUndimmedDetentIdentifier = .medium
                 }
                 present(vc, animated: true, completion: nil)
             }
-            }else if indexPath.item == 52 || indexPath.item == 53 {
-                let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
-                vc.choices += kosulist
-                vc.selectdrow = 2
-                if #available(iOS 15.0, *) {
-                    if let sheet = vc.sheetPresentationController {
-                        // モーダルのサイズを指定する
-                        sheet.detents = [.medium(), .large()]
-                        // 上部の短いバーを表示する（デフォルトは非表示）
-                        sheet.prefersGrabberVisible = true
-                        // 元のViewControllerも操作できるようにする
-                       // sheet.largestUndimmedDetentIdentifier = .medium
-                    }
-                    present(vc, animated: true, completion: nil)
-                    
-                }
-            }else if indexPath.item == 84 || indexPath.item == 85 || indexPath.item == 86 || indexPath.item == 87 {
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
-            vc.choices += jikanlist
-                vc.selectdrow = 3
+            
+        case 52, 53:
+            vc.choices += kosulist
+            vc.selectdrow = 2
             if #available(iOS 15.0, *) {
                 if let sheet = vc.sheetPresentationController {
-                    // モーダルのサイズを指定する
                     sheet.detents = [.medium(), .large()]
-                    // 上部の短いバーを表示する（デフォルトは非表示）
                     sheet.prefersGrabberVisible = true
-                    // 元のViewControllerも操作できるようにする
-                  //  sheet.largestUndimmedDetentIdentifier = .medium
                 }
                 present(vc, animated: true, completion: nil)
             }
-        }else if indexPath.item == 116 || indexPath.item == 117 {
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "ChoiceViewController") as! ChoiceViewController
+            
+        case 84, 85, 86, 87:
+            vc.choices += jikanlist
+            vc.selectdrow = 3
+            if #available(iOS 15.0, *) {
+                if let sheet = vc.sheetPresentationController {
+                    sheet.detents = [.medium(), .large()]
+                    sheet.prefersGrabberVisible = true
+                }
+                present(vc, animated: true, completion: nil)
+            }
+            
+        case 116, 117:
             vc.choices += rokuonlist
             vc.selectdrow = 4
             if #available(iOS 15.0, *) {
                 if let sheet = vc.sheetPresentationController {
-                    // モーダルのサイズを指定する
                     sheet.detents = [.medium(), .large()]
-                    // 上部の短いバーを表示する（デフォルトは非表示）
                     sheet.prefersGrabberVisible = true
-                    // 元のViewControllerも操作できるようにする
-                //    sheet.largestUndimmedDetentIdentifier = .medium
                 }
                 present(vc, animated: true, completion: nil)
             }
-            }else{
-        print("the cell item selected is: \(indexPath.item)")
-        print("the cell row selected is: \(indexPath.row)")
+            
+        case 124, 125:
+            let loadingViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoadingVC") as! LoadingViewController
+            self.navigationController?.pushViewController(loadingViewController, animated: true)
+            
+        default:
+            break
         }
+        
     }
     
     
@@ -175,8 +158,8 @@ class DecideViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         return cell
     }
-            
-    }
     
-    
+}
+
+
 
